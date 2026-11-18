@@ -203,7 +203,7 @@
   });
   const form = document.getElementById('form'), msg = document.getElementById('msg'), btn = document.getElementById('submit');
   const say = (t, err) => { msg.textContent = t; msg.className = 'msg' + (err ? ' err' : ''); };
-  // Korte links voor social: tenner.expo.app/ig en /tt tellen als Instagram en TikTok.
+  // Korte links voor social: tennerapp.nl/ig en /tt tellen als Instagram en TikTok.
   const PATHS = { ig: 'instagram', tt: 'tiktok' };
   const source = (new URLSearchParams(location.search).get('utm_source') || PATHS[location.pathname.replace(/\//g, '').toLowerCase()] || document.referrer.replace(/^https?:\/\/(www\.)?/, '').split('/')[0] || 'direct').slice(0, 64);
 
