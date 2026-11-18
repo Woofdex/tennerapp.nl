@@ -25,15 +25,17 @@
   .b3 { width: 140px; height: 140px; background: #DDF8EA; top: 120px; right: -60px; }
   .hero .wrap > * { position: relative; z-index: 1; }
   .brand { display: flex; align-items: center; gap: 10px; font: 800 23px var(--display); letter-spacing: -.04em; color: var(--forest); }
-  .mark { width: 40px; height: 40px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; box-shadow: 0 4px 0 #3FD592; }
+  .mark { width: 40px; height: 40px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; }
   .hello { display: inline-block; margin-top: 30px; font: 800 13px var(--body); letter-spacing: .12em; text-transform: uppercase; background: var(--mint); color: #0E3B2A; border-radius: 999px; padding: 7px 14px; transform: rotate(-2deg); }
   h1 { font: 800 clamp(36px, 9vw, 52px)/1.02 var(--display); letter-spacing: -.045em; margin: 16px 0 14px; text-wrap: balance; }
-  h1 .tien { display: inline-block; background: var(--mint); padding: 0 12px 4px; border-radius: 16px; transform: rotate(-3deg); box-shadow: 0 6px 0 #3FD592; }
+  h1 .tien { display: inline-block; background: var(--mint); padding: 0 12px 4px; border-radius: 16px; transform: rotate(-3deg); }
   .lede { font-size: 18px; color: var(--soft); margin: 0; max-width: 46ch; }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .tags span { font-size: 14px; font-weight: 600; padding: 7px 13px; border-radius: 999px; background: #EAFBF2; color: var(--forest); }
-  .card { margin-top: 28px; background: #fff; border-radius: 30px; padding: 24px 22px 20px; box-shadow: 0 24px 60px -18px rgba(22,58,44,.22), 0 0 0 1px var(--line); position: relative; }
-  .sticker { position: absolute; top: -18px; right: 18px; background: var(--green); color: #fff; font: 800 16px var(--display); padding: 9px 16px; border-radius: 16px; transform: rotate(5deg); box-shadow: 0 5px 0 #13603F; }
+  .card { margin-top: 28px; background: linear-gradient(180deg, #E3FAEE 0%, #F6FDF9 45%, #FFFFFF 100%); border-radius: 30px; padding: 26px 22px 20px; border: 2px solid #CFF3E0; position: relative; }
+  .card input[type=email] { background: #fff; }
+  .card .chips span { background: #fff; }
+  .sticker { position: absolute; top: -18px; right: 18px; background: var(--green); color: #fff; font: 800 16px var(--display); padding: 9px 16px; border-radius: 16px; transform: rotate(5deg); user-select: none; }
   .card-title { font: 800 25px/1.15 var(--display); letter-spacing: -.03em; margin: 0 0 4px; }
   .card-sub { margin: 0 0 18px; color: var(--soft); font-size: 15.5px; }
   .field { position: relative; }
@@ -54,10 +56,10 @@
   .chips input:checked + span::before { width: 14px; margin-right: 6px; }
   .chips input:focus-visible + span { box-shadow: 0 0 0 3px rgba(31,138,95,.45); }
   button { position: relative; margin-top: 22px; width: 100%; height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 9px 0 24px;
-    font: 700 17.5px var(--body); color: #fff; border: 0; border-radius: 999px; cursor: pointer; background: var(--green); box-shadow: 0 6px 0 #13603F; transition: transform .12s, box-shadow .12s; }
+    font: 700 17.5px var(--body); color: #fff; border: 0; border-radius: 999px; cursor: pointer; background: var(--green); transition: transform .12s, background .2s; }
   button .go { width: 42px; height: 42px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; transition: transform .2s; }
   button:hover .go { transform: translateX(3px) rotate(-8deg); }
-  button:active { transform: translateY(4px); box-shadow: 0 2px 0 #13603F; }
+  button:hover { background: #197A53; } button:active { transform: scale(.985); }
   button:disabled { opacity: .75; cursor: default; }
   button:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
   .fine { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: var(--soft); margin: 16px 2px 0; }
@@ -92,7 +94,7 @@
   .locked, .locked body { overflow: hidden; }
   #intro .stage { display: flex; flex-direction: column; align-items: center; gap: 22px; }
   #intro .disc { width: 132px; height: 132px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; position: relative;
-    transform: scale(0); animation: pop .6s cubic-bezier(.2,1.6,.4,1) .15s forwards; box-shadow: 0 10px 0 #3FD592, 0 30px 60px rgba(63,213,146,.3); }
+    transform: scale(0); animation: pop .6s cubic-bezier(.2,1.6,.4,1) .15s forwards; }
   #intro .ring { position: absolute; inset: 0; border-radius: 50%; border: 3px solid var(--mint); opacity: 0; animation: ring 1.4s ease-out .6s 2; }
   #intro .ring.r2 { border-color: #3FD592; animation-delay: 1.1s; animation-iteration-count: 1; }
   #intro svg .d { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .45s ease-out forwards; }
