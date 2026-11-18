@@ -1,3 +1,19 @@
+# tennerapp.nl: iedereen welkom, ook zoekmachines en AI-zoekdiensten.
 User-agent: *
 Allow: /
+
+# AI-zoekdiensten (citeren in antwoorden): expliciet toegestaan
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
 Sitemap: https://tennerapp.nl/sitemap.xml
