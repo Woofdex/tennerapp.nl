@@ -3,48 +3,81 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tenner · lekker eten voor 2 onder een tientje</title>
-<meta name="description" content="Tenner zoekt voor elk recept de voordeligste boodschappen bij de supermarkten bij jou in de buurt. Gratis! Zet je op de wachtlijst.">
-<meta property="og:title" content="Tenner · lekker eten voor 2 onder een tientje">
-<meta property="og:description" content="Een vrolijke, gratis app: kies een recept en je supermarkten, Tenner zoekt de voordeligste boodschappen voor je uit.">
+<title>Tenner: Weekmenu &amp; Recepten · gratis app</title>
+<meta name="description" content="Tenner zoekt voor elk recept de voordeligste boodschappen bij de supermarkten bij jou in de buurt. Gratis app voor iPhone en Android. Zet je op de wachtlijst!">
+<meta property="og:title" content="Tenner: Weekmenu &amp; Recepten">
+<meta property="og:description" content="Gratis app: kies een recept en je supermarkten, Tenner zoekt de voordeligste boodschappen voor je uit.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
 <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
-  :root { --ink: #163A2C; --soft: #5D7368; --bg: #FFFFFF; --field: #F3F9F6; --forest: #134A37; --green: #1F8A5F; --mint: #6EF2B6; --mint2: #C8F6DE;
-    --sun: #FFD45C; --sun2: #FFF0BF; --peach: #FF9F7A; --peach2: #FFE1D3; --sky: #E3ECFF; --line: #E3EEE8;
+  :root { --ink: #163A2C; --soft: #5D7368; --mute: #8A9A92; --bg: #FFFFFF; --field: #F3F9F6; --forest: #134A37; --green: #1F8A5F; --mint: #6EF2B6; --mint2: #C8F6DE; --tint: #EAFBF2; --line: #E3EEE8;
     --display: Geist, "Inter Tight", system-ui, sans-serif; --body: Geist, Inter, system-ui, -apple-system, sans-serif; }
   * { box-sizing: border-box; }
-  body { margin: 0; font: 17px/1.6 var(--body); color: var(--ink); background: var(--bg); overflow-x: hidden; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font: 17px/1.55 var(--body); color: var(--ink); background: var(--bg); overflow-x: hidden; }
   a { color: var(--green); font-weight: 600; }
-  .wrap { max-width: 560px; margin: 0 auto; position: relative; }
-  .hero { position: relative; padding: max(26px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 40px max(20px, env(safe-area-inset-left)); }
-  .blob { position: absolute; border-radius: 50%; filter: blur(2px); z-index: 0; pointer-events: none; }
-  .b1 { width: 260px; height: 260px; background: #E6FBF1; top: -80px; right: -90px; }
-  .b2 { width: 180px; height: 180px; background: #EFFCF5; top: 230px; left: -110px; }
-  .b3 { width: 140px; height: 140px; background: #DDF8EA; top: 120px; right: -60px; }
-  .hero .wrap > * { position: relative; z-index: 1; }
-  .brand { display: flex; align-items: center; gap: 10px; font: 800 23px var(--display); letter-spacing: -.04em; color: var(--forest); }
-  .mark { width: 40px; height: 40px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; }
-  .hello { display: inline-block; margin-top: 30px; font: 800 13px var(--body); letter-spacing: .12em; text-transform: uppercase; background: var(--mint); color: #0E3B2A; border-radius: 999px; padding: 7px 14px; transform: rotate(-2deg); }
-  h1 { font: 800 clamp(36px, 9vw, 52px)/1.02 var(--display); letter-spacing: -.045em; margin: 16px 0 14px; text-wrap: balance; }
-  h1 .tien { display: inline-block; background: var(--mint); padding: 0 12px 4px; border-radius: 16px; transform: rotate(-3deg); }
-  .lede { font-size: 18px; color: var(--soft); margin: 0; max-width: 46ch; }
-  .stores { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 20px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 max(20px, env(safe-area-inset-left)); }
+  .sr, .hp { position: absolute; left: -9999px; }
+
+  /* Navigatiebalk */
+  .nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.86); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px); border-bottom: 1px solid var(--line); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 9px; font: 800 20px var(--display); letter-spacing: -.04em; color: var(--forest); text-decoration: none; }
+  .brand img { width: 30px; height: 30px; border-radius: 22.5%; }
+  .nav .cta { font: 700 14px var(--body); color: #fff; background: var(--green); padding: 7px 16px; border-radius: 999px; text-decoration: none; }
+
+  /* Appkop, zoals een productpagina */
+  .app { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; padding: 28px 0 22px; }
+  .icon { width: 118px; height: 118px; border-radius: 22.5%; display: block; border: 1px solid rgba(0,0,0,.06); }
+  .app h1 { font: 800 clamp(26px, 6vw, 36px)/1.1 var(--display); letter-spacing: -.035em; margin: 0; }
+  .app .subtitle { color: var(--soft); margin: 3px 0 0; font-size: 16px; line-height: 1.35; }
+  .app .dev { margin: 2px 0 0; font-size: 14px; color: var(--mute); }
+  .get { display: flex; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+  .pill { display: inline-flex; align-items: center; justify-content: center; min-width: 96px; height: 34px; padding: 0 18px; border-radius: 999px; background: var(--green); color: #fff; font: 800 15px var(--body); letter-spacing: .01em; text-decoration: none; text-transform: uppercase; }
+  .pill:hover { background: #197A53; }
+  .get small { color: var(--mute); font-size: 12.5px; line-height: 1.3; }
+  .stores { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 4px 0 22px; }
   .stores img { display: block; }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-  .tags span { font-size: 14px; font-weight: 600; padding: 7px 13px; border-radius: 999px; background: #EAFBF2; color: var(--forest); }
-  .card { margin-top: 28px; background: linear-gradient(180deg, #E3FAEE 0%, #F6FDF9 45%, #FFFFFF 100%); border-radius: 30px; padding: 26px 22px 20px; border: 2px solid #CFF3E0; position: relative; }
-  .card input[type=email] { background: #fff; }
-  .card .chips span { background: #fff; }
-  .sticker { position: absolute; top: -18px; right: 18px; background: var(--green); color: #fff; font: 800 16px var(--display); padding: 9px 16px; border-radius: 16px; transform: rotate(5deg); user-select: none; }
+
+  /* Infobalk */
+  .facts { display: flex; overflow-x: auto; scrollbar-width: none; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 12px 20px; margin: 0 -20px; }
+  .facts::-webkit-scrollbar { display: none; }
+  .fact { flex: 1 0 auto; min-width: 104px; text-align: center; padding: 2px 14px; }
+  .fact + .fact { border-left: 1px solid var(--line); }
+  .fact .k { font: 700 10.5px var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); }
+  .fact .v { font: 800 21px/1.25 var(--display); letter-spacing: -.02em; color: var(--soft); margin: 3px 0 1px; }
+  .fact .s { font-size: 12.5px; color: var(--mute); white-space: nowrap; }
+
+  h2 { font: 800 23px var(--display); letter-spacing: -.03em; margin: 0 0 12px; }
+  section { padding: 28px 0 4px; }
+  section + section { border-top: 1px solid var(--line); margin-top: 24px; }
+
+  /* Beschrijving */
+  .hello { display: inline-block; font: 800 12.5px var(--body); letter-spacing: .1em; text-transform: uppercase; background: var(--mint); color: #0E3B2A; border-radius: 999px; padding: 5px 12px; margin-bottom: 10px; }
+  .lead { font: 800 clamp(24px, 5.4vw, 30px)/1.15 var(--display); letter-spacing: -.035em; margin: 0 0 10px; }
+  .lead .tien { background: var(--mint); padding: 0 8px 2px; border-radius: 10px; }
+  .desc p { margin: 0 0 12px; }
+  .desc ul { margin: 0 0 12px; padding-left: 0; list-style: none; }
+  .desc li { padding-left: 26px; position: relative; margin: 5px 0; }
+  .desc li::before { content: ""; position: absolute; left: 2px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--mint) center/11px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4.2L19 7' fill='none' stroke='%230E3B2A' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+  .desc h3 { font: 800 14px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--green); margin: 18px 0 6px; }
+  .more { position: relative; max-height: 270px; overflow: hidden; }
+  .more::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 80px; background: linear-gradient(rgba(255,255,255,0), #fff); }
+  .more.open { max-height: none; } .more.open::after { display: none; }
+  .more-btn { background: none; border: 0; padding: 4px 0; font: 700 16px var(--body); color: var(--green); cursor: pointer; }
+
+  /* Wachtlijst */
+  .card { background: linear-gradient(180deg, #E3FAEE 0%, #F6FDF9 45%, #FFFFFF 100%); border-radius: 26px; padding: 24px 22px 20px; border: 2px solid #CFF3E0; position: relative; scroll-margin-top: 72px; }
+  .sticker { position: absolute; top: -16px; right: 18px; background: var(--green); color: #fff; font: 800 15px var(--display); padding: 7px 14px; border-radius: 14px; transform: rotate(5deg); user-select: none; }
   .card-title { font: 800 25px/1.15 var(--display); letter-spacing: -.03em; margin: 0 0 4px; }
   .card-sub { margin: 0 0 18px; color: var(--soft); font-size: 15.5px; }
   .field { position: relative; }
   .field svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #8C9A92; pointer-events: none; transition: color .2s; }
-  input[type=email] { width: 100%; height: 58px; font: 500 16px var(--body); color: var(--ink); padding: 0 16px 0 48px; background: var(--field); border: 2px solid var(--line); border-radius: 18px; outline: none; transition: background .2s, border-color .2s, box-shadow .2s; }
+  input[type=email] { width: 100%; height: 56px; font: 500 16px var(--body); color: var(--ink); padding: 0 16px 0 48px; background: #fff; border: 2px solid var(--line); border-radius: 16px; outline: none; transition: border-color .2s, box-shadow .2s; }
   input[type=email]::placeholder { color: #9AA79F; font-weight: 400; }
-  input[type=email]:focus { background: #fff; border-color: var(--green); box-shadow: 0 0 0 4px rgba(110,242,182,.4); }
+  input[type=email]:focus { border-color: var(--green); box-shadow: 0 0 0 4px rgba(110,242,182,.4); }
   .field:focus-within svg { color: var(--green); }
   .sub { display: flex; justify-content: space-between; align-items: baseline; margin: 20px 0 10px; font-weight: 700; font-size: 15px; }
   .sub small { color: var(--soft); font-weight: 400; font-size: 13px; white-space: nowrap; }
@@ -57,13 +90,13 @@
   .chips input:checked + span { background: var(--mint); border-color: var(--mint); color: #0E3B2A; font-weight: 600; }
   .chips input:checked + span::before { width: 14px; margin-right: 6px; }
   .chips input:focus-visible + span { box-shadow: 0 0 0 3px rgba(31,138,95,.45); }
-  button { position: relative; margin-top: 22px; width: 100%; height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 9px 0 24px;
+  button[type=submit] { margin-top: 22px; width: 100%; height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 9px 0 24px;
     font: 700 17.5px var(--body); color: #fff; border: 0; border-radius: 999px; cursor: pointer; background: var(--green); transition: transform .12s, background .2s; }
-  button .go { width: 42px; height: 42px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; transition: transform .2s; }
-  button:hover .go { transform: translateX(3px) rotate(-8deg); }
-  button:hover { background: #197A53; } button:active { transform: scale(.985); }
-  button:disabled { opacity: .75; cursor: default; }
-  button:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
+  button[type=submit] .go { width: 42px; height: 42px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; transition: transform .2s; }
+  button[type=submit]:hover { background: #197A53; } button[type=submit]:hover .go { transform: translateX(3px) rotate(-8deg); }
+  button[type=submit]:active { transform: scale(.985); }
+  button[type=submit]:disabled { opacity: .75; cursor: default; }
+  button:focus-visible, .pill:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
   .fine { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: var(--soft); margin: 16px 2px 0; }
   .fine svg { flex: none; margin-top: 2px; }
   .msg { margin-top: 12px; font-size: 15px; min-height: 1.2em; text-align: center; }
@@ -72,22 +105,30 @@
   .done .yay { font-size: 54px; line-height: 1; display: inline-block; animation: bounce .7s cubic-bezier(.2,1.6,.4,1); }
   .done .big { font: 800 27px var(--display); letter-spacing: -.03em; margin: 10px 0 6px; }
   .done p { margin: 0 auto; color: var(--soft); max-width: 34ch; }
-  .hp, .sr { position: absolute; left: -9999px; }
-  main { padding: 20px max(20px, env(safe-area-inset-right)) 56px max(20px, env(safe-area-inset-left)); }
-  h2 { font: 800 25px var(--display); letter-spacing: -.035em; margin: 0 0 16px; }
-  section { margin-bottom: 44px; }
-  .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-  .steps li { display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: center; background: #fff; border-radius: 22px; padding: 14px 16px; border: 2px solid var(--line); }
-  .steps .ic { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 26px; }
-  .steps strong { display: block; font-size: 17px; }
-  .steps p { margin: 2px 0 0; color: var(--soft); font-size: 15.5px; line-height: 1.5; }
-  .together { background: #EAFBF2; border-radius: 28px; padding: 24px 22px; }
-  .together p { margin: 0 0 12px; max-width: 60ch; }
-  .together p:last-child { margin: 0; }
-  .free { display: inline-block; background: var(--mint); font-weight: 800; padding: 2px 10px; border-radius: 10px; }
-  footer { border-top: 2px dashed var(--line); padding: 20px max(20px, env(safe-area-inset-right)) max(28px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); font-size: 13.5px; color: var(--soft); }
+
+  /* App-privacy */
+  .privacy-intro { color: var(--soft); margin: 0 0 14px; font-size: 15.5px; }
+  .pcards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .pcard { background: var(--field); border-radius: 20px; padding: 20px; text-align: center; }
+  .pcard .ic { width: 44px; height: 44px; margin: 0 auto 8px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-size: 22px; }
+  .pcard strong { display: block; font-size: 16.5px; }
+  .pcard p { margin: 4px 0 0; color: var(--soft); font-size: 14.5px; line-height: 1.45; }
+
+  /* Informatie */
+  dl.info { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); column-gap: 32px; }
+  dl.info div { border-bottom: 1px solid var(--line); padding: 11px 0; }
+  dl.info dt { font-size: 13px; color: var(--mute); }
+  dl.info dd { margin: 1px 0 0; font-size: 16px; }
+
+  footer { margin-top: 36px; border-top: 1px solid var(--line); padding: 20px 0 max(28px, env(safe-area-inset-bottom)); font-size: 12.5px; line-height: 1.55; color: var(--mute); }
+  footer p { margin: 0 0 8px; }
   footer a { color: var(--soft); }
   @keyframes bounce { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+
+  @media (min-width: 720px) {
+    .app { gap: 28px; padding-top: 44px; }
+    .icon { width: 168px; height: 168px; }
+  }
 
   /* ---- Openingsanimatie: alleen als JS draait, één keer per sessie, niet bij 'minder beweging'. ---- */
   #intro { display: none; }
@@ -106,10 +147,8 @@
   #intro .tag { color: var(--soft); font-size: 16px; opacity: 0; animation: fade .5s ease 1.75s forwards; }
   #intro .free-app { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; font: 800 20px var(--display); letter-spacing: -.02em; padding: 10px 20px; border-radius: 999px; transform: scale(0) rotate(-4deg); animation: badge .55s cubic-bezier(.2,1.6,.4,1) 2.05s forwards; }
   @keyframes badge { to { transform: scale(1) rotate(-4deg); } }
-  .intro .hero .wrap > :not(.blob) { opacity: 0; transform: translateY(14px); animation: rise .6s cubic-bezier(.2,.9,.3,1) forwards; }
-  .intro .hero .wrap > :nth-child(1) { animation-delay: 3.65s; } .intro .hero .wrap > :nth-child(2) { animation-delay: 3.7s; }
-  .intro .hero .wrap > :nth-child(3) { animation-delay: 3.76s; } .intro .hero .wrap > :nth-child(4) { animation-delay: 3.82s; }
-  .intro .hero .wrap > :nth-child(5) { animation-delay: 3.88s; } .intro .hero .wrap > :nth-child(6) { animation-delay: 3.95s; } .intro .hero .wrap > :nth-child(7) { animation-delay: 4.02s; }
+  .intro .reveal > * { opacity: 0; transform: translateY(14px); animation: rise .6s cubic-bezier(.2,.9,.3,1) 3.65s forwards; }
+  .intro .reveal > :nth-child(2) { animation-delay: 3.72s; } .intro .reveal > :nth-child(3) { animation-delay: 3.8s; } .intro .reveal > :nth-child(n+4) { animation-delay: 3.88s; }
   @keyframes pop { to { transform: scale(1); } }
   @keyframes ring { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.9); } }
   @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -118,8 +157,8 @@
   @keyframes rise { to { opacity: 1; transform: none; } }
   @keyframes introOut { to { transform: translateY(-100%); visibility: hidden; } }
   .intro.skip #intro { animation: introOut .45s cubic-bezier(.7,0,.2,1) forwards; }
-  .intro.skip .hero .wrap > :not(.blob) { animation-delay: .3s !important; }
-  @media (prefers-reduced-motion: reduce) { .done .yay { animation: none; } }
+  .intro.skip .reveal > * { animation-delay: .3s !important; }
+  @media (prefers-reduced-motion: reduce) { .done .yay { animation: none; } html { scroll-behavior: auto; } }
 </style>
 <script>
   // Openingsanimatie één keer per sessie; overslaan bij 'minder beweging'. Zonder JS: gewoon de pagina.
@@ -148,19 +187,69 @@
     <div class="free-app">💚 Gratis app</div>
   </div>
 </div>
-<header class="hero">
-  <div class="wrap">
-    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
-    <div class="brand"><span class="mark"><svg width="14" height="32" viewBox="0 0 43 102" aria-hidden="true"><g fill="none" stroke="#134A37" stroke-width="6.6" stroke-linecap="round"><path d="M10 4V15M20 4V15M30 4V15"/><path d="M10 15Q10 23.5 20 23.5Q30 23.5 30 15"/></g><path d="M20 24V78Q20 92 35 92H42" fill="none" stroke="#134A37" stroke-width="20"/><path d="M20 25V32" stroke="#134A37" stroke-width="20" stroke-linecap="round"/><path d="M1 37H41" stroke="#134A37" stroke-width="17"/></svg></span>tenner</div>
-    <span class="hello">Hoi! 👋 Fijn dat je er bent</span>
-    <h1>Lekker eten voor 2, onder een <span class="tien">tientje</span></h1>
-    <p class="lede">Kies een recept waar je zin in hebt. Tenner zoekt bij de supermarkten bij jou in de buurt uit waar je de boodschappen het voordeligst haalt. Zo wordt koken nóg leuker. 🥕</p>
-    <div class="stores"><span role="img" aria-label="Pre-order on the App Store"><img src="/badges/app-store-preorder.svg" alt="Pre-order on the App Store" height="48"></span><span role="img" aria-label="Binnenkort op Google Play"><img src="/badges/google-play.png" alt="Ontdek het op Google Play" height="60" style="margin:-7px -8px"></span></div>
-    <div class="tags"><span>💚 Helemaal gratis</span><span>🙌 Geen account nodig</span><span>📱 Binnenkort voor iPhone en Android</span></div>
 
-    <div class="card" id="card"><span class="sticker" aria-hidden="true">Gratis!</span><div id="card-in">
+<nav class="nav" aria-label="Hoofdmenu">
+  <div class="wrap"><a class="brand" href="/"><img src="/icon.png" alt="">tenner</a><a class="cta" href="#aanmelden">Doe mee</a></div>
+</nav>
+
+<main class="wrap reveal">
+  <header class="app">
+    <img class="icon" src="/icon.png" alt="App-icoon van Tenner" width="168" height="168">
+    <div>
+      <h1>Tenner: Weekmenu &amp; Recepten</h1>
+      <p class="subtitle">Slim boodschappen vergelijken</p>
+      <p class="dev">Tenner</p>
+      <div class="get"><a class="pill" href="#aanmelden">Gratis</a><small>Binnenkort voor<br>iPhone en Android</small></div>
+    </div>
+  </header>
+
+  <div>
+    <div class="stores"><span role="img" aria-label="Pre-order on the App Store"><img src="/badges/app-store-preorder.svg" alt="Pre-order on the App Store" height="48"></span><span role="img" aria-label="Binnenkort op Google Play"><img src="/badges/google-play.png" alt="Ontdek het op Google Play" height="60" style="margin:-7px -8px"></span></div>
+    <div class="facts" role="list" aria-label="Over de app">
+      <div class="fact" role="listitem"><div class="k">Prijs</div><div class="v">Gratis</div><div class="s">geen abonnement</div></div>
+      <div class="fact" role="listitem"><div class="k">Leeftijd</div><div class="v">4+</div><div class="s">jaar</div></div>
+      <div class="fact" role="listitem"><div class="k">Categorie</div><div class="v">🍽️</div><div class="s">Eten en drinken</div></div>
+      <div class="fact" role="listitem"><div class="k">Account</div><div class="v">Geen</div><div class="s">nodig</div></div>
+      <div class="fact" role="listitem"><div class="k">Reclame</div><div class="v">Geen</div><div class="s">advertenties</div></div>
+      <div class="fact" role="listitem"><div class="k">Taal</div><div class="v">NL</div><div class="s">Nederlands</div></div>
+    </div>
+  </div>
+
+  <section aria-labelledby="over">
+    <h2 id="over" class="sr">Over Tenner</h2>
+    <span class="hello">Hoi! 👋 Fijn dat je er bent</span>
+    <p class="lead">Lekker eten voor 2, onder een <span class="tien">tientje</span></p>
+    <div class="desc more" id="desc">
+      <p>Wat kost avondeten voor twee? Dat hangt af van je supermarkt! Tenner rekent elk recept door met de echte prijzen van de supermarkten bij jou in de buurt, en zoekt uit waar je de boodschappen het voordeligst haalt. Gratis, zonder account. 🥕</p>
+      <h3>Zo werkt het</h3>
+      <ul>
+        <li>Kies je budget en met hoeveel je eet.</li>
+        <li>Tenner rekent honderden recepten door bij jouw supermarkten.</li>
+        <li>Je krijgt je boodschappenlijst per winkel, met de fietsroute erbij.</li>
+      </ul>
+      <h3>Waarom je Tenner gaat liefhebben</h3>
+      <ul>
+        <li>Echte prijzen per supermarkt, geen schattingen</li>
+        <li>Slim combineren: haal elk product waar het voordelig is, in maximaal 2 winkels</li>
+        <li>“Waarom deze prijs?”: Tenner legt precies uit waar je bespaart</li>
+        <li>Plan je hele week binnen je budget</li>
+        <li>Lunch en avondeten, met je dieet en allergieën erbij</li>
+        <li>Kastproducten die je al hebt, tellen niet mee</li>
+        <li>Stap voor stap koken, met handige timers</li>
+        <li>Klopt een prijs niet in jouw winkel? Pas hem aan en alles rekent mee</li>
+      </ul>
+      <h3>Gratis en privé</h3>
+      <p>Geen account, geen advertenties, geen tracking. Wat je instelt, blijft gewoon op je telefoon.</p>
+      <h3>Samen maken we er iets moois van 💚</h3>
+      <p>Tenner bouwen we samen met jou. Heb je een tip, een lievelingsrecept of een idee? Laat het ons weten, dan maken we Tenner steeds een beetje beter. Lekker eten, minder betalen!</p>
+    </div>
+    <button class="more-btn" id="more" type="button" aria-controls="desc" aria-expanded="false">meer</button>
+  </section>
+
+  <section aria-labelledby="aanmelden-titel">
+    <div class="card" id="aanmelden"><span class="sticker" aria-hidden="true">Gratis!</span><div id="card-in">
       <form id="form" novalidate>
-        <h2 class="card-title">Doe je mee? 🎉</h2>
+        <h2 class="card-title" id="aanmelden-titel">Doe je mee? 🎉</h2>
         <p class="card-sub">Zet je op de wachtlijst, dan laten we het je als eerste weten zodra Tenner er is.</p>
         <label for="email" class="sr">E-mailadres</label>
         <div class="field">
@@ -175,32 +264,40 @@
         <p class="fine"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7.5a4 4 0 018 0V10" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Gratis en vrijblijvend. Met je aanmelding geef je toestemming dat we je mailen over de lancering van Tenner. Je adres is veilig bij ons: we verkopen het niet en geven het aan niemand door. Afmelden kan altijd. Lees ook ons <a href="/privacy">privacybeleid</a>.</span></p>
       </form>
     </div></div>
-  </div>
-</header>
+  </section>
 
-<main>
-  <div class="wrap">
-    <section>
-      <h2>Zo makkelijk werkt het</h2>
-      <ul class="steps">
-        <li><span class="ic" style="background:#EAFBF2">📍</span><div><strong>Kies je supermarkten</strong><p>Op de kaart zie je alle winkels bij jou in de buurt.</p></div></li>
-        <li><span class="ic" style="background:#EAFBF2">🍝</span><div><strong>Kies iets lekkers</strong><p>Honderden recepten voor lunch en avondeten, met de prijs voor jouw huishouden erbij.</p></div></li>
-        <li><span class="ic" style="background:#EAFBF2">🛒</span><div><strong>Haal je boodschappen slim</strong><p>Tenner rekent uit waar je wat het voordeligst haalt en tekent je fietsroute.</p></div></li>
-        <li><span class="ic" style="background:#EAFBF2">👩‍🍳</span><div><strong>Smullen maar!</strong><p>Kook stap voor stap mee, met handige timers. Eet smakelijk!</p></div></li>
-      </ul>
-    </section>
-    <section class="together">
-      <h2>Samen maken we er iets moois van 💚</h2>
-      <p>Boodschappen worden steeds duurder. Daar kun je over balen, maar je kunt er ook iets leuks mee doen: lekker koken en ondertussen slim besparen.</p>
-      <p>Tenner bouwen we samen met jou. Heb je een tip, een lievelingsrecept of een idee? Laat het ons weten, dan maken we Tenner steeds een beetje beter. Klopt een prijs niet in jouw winkel? Pas hem aan in de app, en Tenner rekent meteen met jouw prijs.</p>
-      <p><span class="free">En het is gratis.</span> Geen abonnement, geen advertenties, geen kleine lettertjes. Gewoon een vrolijke app om samen slimmer boodschappen te doen.</p>
-    </section>
-  </div>
+  <section aria-labelledby="app-privacy">
+    <h2 id="app-privacy">App-privacy</h2>
+    <p class="privacy-intro">Zo gaat de app met je gegevens om. Meer details staan in ons <a href="/privacy">privacybeleid</a>.</p>
+    <div class="pcards">
+      <div class="pcard"><div class="ic" aria-hidden="true">🙅</div><strong>Geen tracking</strong><p>Tenner volgt je niet in andere apps of op websites, en toont geen advertenties.</p></div>
+      <div class="pcard"><div class="ic" aria-hidden="true">📍</div><strong>Locatie, niet aan jou gekoppeld</strong><p>Alleen voor een fietsroute of als je een postcode invult, gaat er een locatie mee, zonder naam of account.</p></div>
+      <div class="pcard"><div class="ic" aria-hidden="true">📱</div><strong>Blijft op je telefoon</strong><p>Je supermarkten, weekmenu, boodschappenlijst en voorkeuren worden alleen op je eigen telefoon bewaard.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="informatie">
+    <h2 id="informatie">Informatie</h2>
+    <dl class="info">
+      <div><dt>Aanbieder</dt><dd>Tenner</dd></div>
+      <div><dt>Categorie</dt><dd>Eten en drinken</dd></div>
+      <div><dt>Geschikt voor</dt><dd>iPhone en Android</dd></div>
+      <div><dt>Talen</dt><dd>Nederlands</dd></div>
+      <div><dt>Leeftijd</dt><dd>4+</dd></div>
+      <div><dt>Prijs</dt><dd>Gratis, geen in-app-aankopen</dd></div>
+      <div><dt>Beschikbaar in</dt><dd>Nederland</dd></div>
+      <div><dt>Copyright</dt><dd>© 2026 Tenner</dd></div>
+      <div><dt>Hulp en contact</dt><dd><a href="/support">Naar de hulppagina</a></dd></div>
+      <div><dt>Privacybeleid</dt><dd><a href="/privacy">Lees het privacybeleid</a></dd></div>
+    </dl>
+  </section>
+
+  <footer>
+    <p>Tenner is onafhankelijk en niet verbonden aan de genoemde supermarkten; merknamen zijn van hun eigenaren. Prijzen in de app zijn landelijke onlineprijzen (open data van Checkjebon.nl), zonder bonusacties.</p>
+    <p>Apple en App Store zijn handelsmerken van Apple Inc. Google Play en het Google Play-logo zijn handelsmerken van Google LLC.</p>
+    <p><a href="/privacy">Privacy</a> · <a href="/support">Hulp en contact</a> · Gemaakt met 💚 in Nederland</p>
+  </footer>
 </main>
-
-<footer>
-  <div class="wrap">Tenner is onafhankelijk en niet verbonden aan de genoemde supermarkten; merknamen zijn van hun eigenaren. Prijzen zijn landelijke onlineprijzen, zonder bonusacties. · <a href="/privacy">Privacy</a> · <a href="/support">Hulp en contact</a></div>
-</footer>
 
 <script>
   // Tik op de intro om hem over te slaan; na afloop weg uit de toegankelijkheidsboom.
@@ -212,6 +309,11 @@
     function done() { root.classList.remove('locked'); if (el.parentNode) el.remove(); }
     el.addEventListener('animationend', function (e) { if (e.target === el && e.animationName === 'introOut') done(); });
     setTimeout(done, 4500);
+  })();
+  // Beschrijving uitklappen, zoals 'meer' in een appwinkel.
+  (function () {
+    var d = document.getElementById('desc'), b = document.getElementById('more');
+    b.addEventListener('click', function () { var open = d.classList.toggle('open'); b.textContent = open ? 'minder' : 'meer'; b.setAttribute('aria-expanded', open); });
   })();
   // Wordt bij het publiceren ingevuld (zie waitlist/build-site.sh). De anon key is openbaar; de tabel laat alleen aanmelden toe.
   const SUPABASE_URL = 'https://dgdfljbipayutjmpanjg.supabase.co';
