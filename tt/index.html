@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tenner · avondeten voor 2 onder een tientje</title>
+<meta name="description" content="Tenner zoekt voor elk recept de goedkoopste boodschappen bij de supermarkten in jouw buurt. Zet je op de wachtlijst.">
+<meta property="og:title" content="Tenner · avondeten voor 2 onder een tientje">
+<meta property="og:description" content="Gratis app en community die elkaar helpt slim boodschappen te doen. Kies je supermarkten en recept, Tenner vindt de goedkoopste boodschappen.">
+<meta name="theme-color" content="#0F3D2D">
+<link rel="icon" href="/icon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+  :root { --forest: #134A37; --deep: #0F3D2D; --accent: #6EF2B6; --on-accent: #06261B; --ink: #0F2E23; --mut: #4A6358; --line: rgba(15,46,35,.12); --chip: #F1F7F3;
+    --display: "Inter Tight", "Helvetica Neue", Arial, sans-serif; --body: Inter, system-ui, -apple-system, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.55 var(--body); color: var(--ink); background: #fff; }
+  .hero { background: radial-gradient(120% 90% at 20% 0%, #1B5E47 0%, var(--deep) 70%); color: #fff;
+    padding: max(28px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 56px max(20px, env(safe-area-inset-left)); }
+  .wrap { max-width: 560px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 10px; font: 700 22px var(--display); letter-spacing: -.03em; }
+  .mark { width: 38px; height: 38px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+  h1 { font: 700 clamp(34px, 8vw, 48px)/1.05 var(--display); letter-spacing: -.035em; margin: 36px 0 14px; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lede { font-size: 17px; color: rgba(255,255,255,.82); margin: 0; max-width: 46ch; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .tags span { font-size: 13.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: rgba(110,242,182,.16); color: var(--accent); border: 1px solid rgba(110,242,182,.35); }
+  .card { position: relative; margin-top: 30px; border-radius: 28px; padding: 1px; background: linear-gradient(150deg, rgba(110,242,182,.9), rgba(255,255,255,.35) 35%, rgba(255,255,255,.15) 70%, rgba(110,242,182,.5));
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.04); }
+  .card-in { background: linear-gradient(180deg, #FFFFFF 0%, #F7FBF9 100%); color: var(--ink); border-radius: 27px; padding: 24px 22px 20px; }
+  .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+  .eyebrow { font: 600 11.5px var(--body); letter-spacing: .14em; text-transform: uppercase; color: #2F7A5C; }
+  .card-title { font: 700 23px/1.15 var(--display); letter-spacing: -.025em; margin: 4px 0 0; }
+  .pill { flex: none; font: 700 12px var(--body); color: var(--on-accent); background: var(--accent); padding: 6px 11px; border-radius: 999px; box-shadow: 0 6px 16px -6px rgba(110,242,182,.9); }
+  .field { position: relative; }
+  .field svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #7A9488; pointer-events: none; transition: color .2s; }
+  input[type=email] { width: 100%; height: 56px; font: 500 16px var(--body); color: var(--ink); padding: 0 16px 0 48px; background: #F1F6F3; border: 1.5px solid transparent; border-radius: 16px; outline: none; transition: background .2s, border-color .2s, box-shadow .2s; }
+  input[type=email]::placeholder { color: #8BA197; font-weight: 400; }
+  input[type=email]:focus { background: #fff; border-color: var(--forest); box-shadow: 0 0 0 4px rgba(110,242,182,.35); }
+  .field:focus-within svg { color: var(--forest); }
+  .sub { display: flex; justify-content: space-between; align-items: baseline; margin: 20px 0 10px; font-weight: 600; font-size: 14px; }
+  .sub small { color: var(--mut); font-weight: 400; font-size: 12.5px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips label { display: inline-flex; margin: 0; }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips span { display: inline-flex; align-items: center; padding: 8px 13px; border-radius: 999px; background: #fff; border: 1.5px solid var(--line); font-size: 14px; font-weight: 500; cursor: pointer; user-select: none; transition: all .18s ease; }
+  .chips span::before { content: ""; width: 0; height: 14px; background: center/14px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.2 4.2L19 7' fill='none' stroke='%236EF2B6' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); transition: width .18s ease, margin .18s ease; }
+  .chips span:hover { border-color: rgba(19,74,55,.35); }
+  .chips input:checked + span { background: var(--forest); border-color: var(--forest); color: #fff; }
+  .chips input:checked + span::before { width: 14px; margin-right: 6px; }
+  .chips input:focus-visible + span { box-shadow: 0 0 0 3px rgba(110,242,182,.6); }
+  button { position: relative; margin-top: 22px; width: 100%; height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 8px 0 24px;
+    font: 600 17px var(--body); color: #fff; border: 0; border-radius: 999px; cursor: pointer; background: linear-gradient(135deg, #1B5E47, #0F3D2D); box-shadow: 0 14px 26px -12px rgba(15,61,45,.8); transition: transform .15s, box-shadow .2s; }
+  button .go { width: 42px; height: 42px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; transition: transform .2s; }
+  button:hover .go { transform: translateX(3px); } button:active { transform: scale(.985); }
+  button:disabled { opacity: .7; cursor: default; }
+  button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .fine { display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; color: var(--mut); margin: 14px 2px 0; }
+  .fine svg { flex: none; margin-top: 2px; }
+  .msg { margin-top: 10px; font-size: 14.5px; min-height: 1.2em; text-align: center; }
+  .msg.err { color: #B42318; }
+  .done { text-align: center; padding: 10px 0; }
+  .done .big { font: 700 24px var(--display); letter-spacing: -.02em; margin: 8px 0 4px; }
+  .hp, .sr { position: absolute; left: -9999px; }
+  main { padding: 40px max(20px, env(safe-area-inset-right)) 56px max(20px, env(safe-area-inset-left)); }
+  h2 { font: 700 22px var(--display); letter-spacing: -.02em; margin: 0 0 16px; }
+  .together { margin-bottom: 40px; }
+  .together p { margin: 0 0 12px; color: var(--mut); max-width: 60ch; }
+  .together .free { color: var(--ink); background: var(--chip); border-radius: 16px; padding: 14px 16px; }
+  ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; counter-reset: s; }
+  ol li { counter-increment: s; display: grid; grid-template-columns: 34px 1fr; gap: 12px; }
+  ol li::before { content: counter(s); width: 34px; height: 34px; border-radius: 50%; background: var(--chip); color: var(--forest); font: 700 15px var(--display); display: grid; place-items: center; }
+  ol strong { display: block; }
+  ol p { margin: 2px 0 0; color: var(--mut); font-size: 15px; }
+  footer { border-top: 1px solid var(--line); padding: 20px max(20px, env(safe-area-inset-right)) max(28px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); font-size: 13px; color: var(--mut); }
+  footer a { color: var(--mut); }
+
+  /* ---- Openingsanimatie: alleen als JS draait, één keer per sessie, niet bij 'minder beweging'. ---- */
+  #intro { display: none; }
+  .intro #intro { display: grid; position: fixed; inset: 0; z-index: 50; place-items: center; background: radial-gradient(120% 90% at 30% 10%, #1B5E47 0%, #0A2E21 75%);
+    animation: introOut .7s cubic-bezier(.7,0,.2,1) 2.35s forwards; cursor: pointer; }
+  .locked, .locked body { overflow: hidden; }
+  #intro .stage { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  #intro .disc { width: 132px; height: 132px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; position: relative;
+    transform: scale(0); animation: pop .6s cubic-bezier(.2,1.6,.4,1) .15s forwards; box-shadow: 0 20px 60px rgba(110,242,182,.35); }
+  #intro .ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--accent); opacity: 0; animation: ring 1.4s ease-out .6s 2; }
+  #intro .ring.r2 { animation-delay: 1.1s; animation-iteration-count: 1; }
+  #intro svg .d { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .45s ease-out forwards; }
+  #intro svg .d1 { animation-delay: .55s; } #intro svg .d2 { animation-delay: .75s; } #intro svg .d3 { animation-delay: .95s; } #intro svg .d4 { animation-delay: 1.15s; }
+  #intro .word { font: 700 44px var(--display); letter-spacing: -.045em; color: #fff; display: flex; overflow: hidden; }
+  #intro .word span { display: inline-block; transform: translateY(110%); animation: up .5s cubic-bezier(.2,.9,.3,1) forwards; }
+  #intro .tag { color: rgba(255,255,255,.75); font-size: 15px; opacity: 0; animation: fade .5s ease 1.75s forwards; }
+  #intro .tag b { color: var(--accent); font-weight: 600; }
+  .intro .hero .wrap > * { opacity: 0; transform: translateY(14px); animation: rise .6s cubic-bezier(.2,.9,.3,1) forwards; }
+  .intro .hero .wrap > :nth-child(1) { animation-delay: 2.65s; } .intro .hero .wrap > :nth-child(2) { animation-delay: 2.72s; }
+  .intro .hero .wrap > :nth-child(3) { animation-delay: 2.79s; } .intro .hero .wrap > :nth-child(4) { animation-delay: 2.86s; }
+  .intro .hero .wrap > :nth-child(5) { animation-delay: 2.95s; }
+  @keyframes pop { to { transform: scale(1); } }
+  @keyframes ring { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(1.9); } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes up { to { transform: none; } }
+  @keyframes fade { to { opacity: 1; } }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @keyframes introOut { to { transform: translateY(-100%); visibility: hidden; } }
+  .intro.skip #intro { animation: introOut .45s cubic-bezier(.7,0,.2,1) forwards; }
+  .intro.skip .hero .wrap > * { animation-delay: .3s !important; }
+</style>
+<script>
+  // Openingsanimatie één keer per sessie; overslaan bij 'minder beweging'. Zonder JS: gewoon de pagina.
+  (function () {
+    var seen = false; try { seen = sessionStorage.getItem('tenner-intro') === '1'; sessionStorage.setItem('tenner-intro', '1'); } catch (e) {}
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!seen && !calm) document.documentElement.classList.add('intro', 'locked');
+  })();
+</script>
+</head>
+<body>
+<div id="intro" aria-hidden="true">
+  <div class="stage">
+    <div class="disc"><span class="ring"></span><span class="ring r2"></span>
+      <svg width="40" height="95" viewBox="0 0 43 102">
+        <g fill="none" stroke="#134A37" stroke-width="6.6" stroke-linecap="round">
+          <path class="d d1" pathLength="1" d="M10 4V15"/><path class="d d1" pathLength="1" d="M20 4V15"/><path class="d d1" pathLength="1" d="M30 4V15"/>
+          <path class="d d2" pathLength="1" d="M10 15Q10 23.5 20 23.5Q30 23.5 30 15"/>
+        </g>
+        <path class="d d3" pathLength="1" d="M20 22V78Q20 92 35 92H42" fill="none" stroke="#134A37" stroke-width="20"/>
+        <path class="d d4" pathLength="1" d="M1 37H41" stroke="#134A37" stroke-width="17" fill="none"/>
+      </svg>
+    </div>
+    <div class="word"><span style="animation-delay:1.20s">t</span><span style="animation-delay:1.26s">e</span><span style="animation-delay:1.32s">n</span><span style="animation-delay:1.38s">n</span><span style="animation-delay:1.44s">e</span><span style="animation-delay:1.50s">r</span></div>
+    <div class="tag">Samen slimmer boodschappen doen · <b>gratis</b></div>
+  </div>
+</div>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><span class="mark"><svg width="14" height="32" viewBox="0 0 43 102" aria-hidden="true"><g fill="none" stroke="#134A37" stroke-width="6.6" stroke-linecap="round"><path d="M10 4V15M20 4V15M30 4V15"/><path d="M10 15Q10 23.5 20 23.5Q30 23.5 30 15"/></g><path d="M20 24V78Q20 92 35 92H42" fill="none" stroke="#134A37" stroke-width="20"/><path d="M20 25V32" stroke="#134A37" stroke-width="20" stroke-linecap="round"/><path d="M1 37H41" stroke="#134A37" stroke-width="17"/></svg></span>tenner</div>
+    <h1>Avondeten voor 2 onder een <em>tientje</em></h1>
+    <p class="lede">Tenner zoekt voor elk recept de goedkoopste boodschappen bij de supermarkten bij jou in de buurt. Samen met jou bouwen we aan een community die elkaar helpt slim boodschappen te doen.</p>
+    <div class="tags"><span>100% gratis</span><span>Geen account nodig</span><span>Binnenkort voor iPhone en Android</span></div>
+
+    <div class="card" id="card"><div class="card-in" id="card-in">
+      <form id="form" novalidate>
+        <div class="card-head">
+          <div><div class="eyebrow">Wachtlijst</div><h2 class="card-title">Wees er als eerste bij</h2></div>
+          <span class="pill">Gratis</span>
+        </div>
+        <label for="email" class="sr">E-mailadres</label>
+        <div class="field">
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Je e-mailadres" required>
+        </div>
+        <div class="sub"><span>Waar doe je boodschappen?</span><small>meerdere mag</small></div>
+        <div class="chips" id="chips" role="group" aria-label="Supermarkten"></div>
+        <input class="hp" type="text" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" id="submit"><span>Zet me op de wachtlijst</span><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#06261B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+        <div class="msg" id="msg" role="status" aria-live="polite"></div>
+        <p class="fine"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10V7.5a4 4 0 018 0V10" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Gratis en vrijblijvend. Met je aanmelding geef je toestemming dat we je mailen over de lancering van Tenner. We verkopen je adres niet en geven het aan niemand door; afmelden kan altijd. Lees ons <a href="/privacy">privacybeleid</a>.</span></p>
+      </form>
+    </div></div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="together">
+      <h2>Samen slimmer boodschappen doen</h2>
+      <p>Boodschappen worden steeds duurder. Daar kun je alleen over balen, maar je kunt er ook samen iets aan doen. Tenner is meer dan een app: het is een community van mensen die elkaar helpen om bewust en voordelig boodschappen te doen.</p>
+      <p>Zie je een mooie aanbieding? Deel hem. Klopt een prijs niet? Geef het door. Heb je een recept dat lekker én goedkoop is? Iedereen heeft er wat aan. Hoe meer mensen meedoen, hoe beter Tenner voor iedereen wordt.</p>
+      <p class="free"><strong>En het is gratis.</strong> Geen abonnement, geen verborgen kosten. We bouwen dit samen met jou, en we willen er met elkaar iets moois van maken.</p>
+    </section>
+    <h2>Zo werkt Tenner</h2>
+    <ol>
+      <li><div><strong>Kies je supermarkten</strong><p>Op de kaart zie je alle winkels bij jou in de buurt.</p></div></li>
+      <li><div><strong>Kies een recept</strong><p>Honderden recepten voor lunch en avondeten, met de prijs voor jouw huishouden.</p></div></li>
+      <li><div><strong>Bespaar op elke boodschap</strong><p>Tenner rekent uit waar je wat het goedkoopst haalt en plant je fietsroute.</p></div></li>
+      <li><div><strong>Help elkaar</strong><p>Deel aanbiedingen en prijzen die je in de winkel ziet. Zo bespaart iedereen mee.</p></div></li>
+    </ol>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Tenner is onafhankelijk en niet verbonden aan de genoemde supermarkten; merknamen zijn van hun eigenaren. Prijzen zijn landelijke onlineprijzen, zonder bonusacties. · <a href="/privacy">Privacy</a> · <a href="/support">Contact</a></div>
+</footer>
+
+<script>
+  // Tik op de intro om hem over te slaan; na afloop weg uit de toegankelijkheidsboom.
+  (function () {
+    var el = document.getElementById('intro'), root = document.documentElement;
+    if (!root.classList.contains('intro')) return;
+    el.addEventListener('click', function () { root.classList.add('skip'); });
+    // Scrollen weer aan zodra het groene scherm weg is; als vangnet ook na 3,5 s.
+    function done() { root.classList.remove('locked'); if (el.parentNode) el.remove(); }
+    el.addEventListener('animationend', function (e) { if (e.target === el && e.animationName === 'introOut') done(); });
+    setTimeout(done, 3500);
+  })();
+  // Wordt bij het publiceren ingevuld (zie waitlist/deploy.sh). De anon key is openbaar; de tabel laat alleen aanmelden toe.
+  const SUPABASE_URL = 'https://dgdfljbipayutjmpanjg.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_A_3XhvEE6HmPLQC0DfaOlg_83fvcEls';
+  const SHOPS = ['Albert Heijn', 'Jumbo', 'Lidl', 'Aldi', 'Plus', 'Dirk', 'Vomar', 'Hoogvliet', 'DekaMarkt', 'Spar', 'Coop', 'Anders'];
+  const chips = document.getElementById('chips');
+  SHOPS.forEach((s, i) => {
+    chips.insertAdjacentHTML('beforeend', `<label><input type="checkbox" id="shop${i}" value="${s}"><span>${s}</span></label>`);
+  });
+  const form = document.getElementById('form'), msg = document.getElementById('msg'), btn = document.getElementById('submit');
+  const say = (t, err) => { msg.textContent = t; msg.className = 'msg' + (err ? ' err' : ''); };
+  // Korte links voor social: tenner.expo.app/ig en /tt tellen als Instagram en TikTok.
+  const PATHS = { ig: 'instagram', tt: 'tiktok' };
+  const source = (new URLSearchParams(location.search).get('utm_source') || PATHS[location.pathname.replace(/\//g, '').toLowerCase()] || document.referrer.replace(/^https?:\/\/(www\.)?/, '').split('/')[0] || 'direct').slice(0, 64);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    if (document.getElementById('website').value) return; // spambot
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return say('Vul een geldig e-mailadres in.', true);
+    const supermarkets = [...chips.querySelectorAll('input:checked')].map((i) => i.value);
+    btn.disabled = true; say('Even geduld…');
+    try {
+      const r = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+        method: 'POST',
+        headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+        body: JSON.stringify({ email, supermarkets, source }),
+      });
+      // 409: dit adres staat er al op. Voor de bezoeker is dat ook goed.
+      if (!r.ok && r.status !== 409) throw new Error(String(r.status));
+      document.getElementById('card-in').innerHTML = '<div class="done"><div class="mark" style="margin:0 auto;width:52px;height:52px;border-radius:50%;background:#6EF2B6;display:grid;place-items:center;font:700 26px Inter Tight,sans-serif;color:#134A37">✓</div><div class="big">Je staat op de lijst!</div><p style="margin:0;color:#4A6358">We mailen je zodra Tenner te downloaden is.</p></div>';
+    } catch (err) {
+      btn.disabled = false;
+      say('Aanmelden lukte niet. Controleer je internetverbinding en probeer het opnieuw.', true);
+    }
+  });
+</script>
+</body>
+</html>
