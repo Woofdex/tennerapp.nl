@@ -30,6 +30,8 @@
   h1 { font: 800 clamp(36px, 9vw, 52px)/1.02 var(--display); letter-spacing: -.045em; margin: 16px 0 14px; text-wrap: balance; }
   h1 .tien { display: inline-block; background: var(--mint); padding: 0 12px 4px; border-radius: 16px; transform: rotate(-3deg); }
   .lede { font-size: 18px; color: var(--soft); margin: 0; max-width: 46ch; }
+  .stores { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 20px; }
+  .stores img { display: block; }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .tags span { font-size: 14px; font-weight: 600; padding: 7px 13px; border-radius: 999px; background: #EAFBF2; color: var(--forest); }
   .card { margin-top: 28px; background: linear-gradient(180deg, #E3FAEE 0%, #F6FDF9 45%, #FFFFFF 100%); border-radius: 30px; padding: 26px 22px 20px; border: 2px solid #CFF3E0; position: relative; }
@@ -90,7 +92,7 @@
   /* ---- Openingsanimatie: alleen als JS draait, één keer per sessie, niet bij 'minder beweging'. ---- */
   #intro { display: none; }
   .intro #intro { display: grid; position: fixed; inset: 0; z-index: 50; place-items: center; background: var(--bg);
-    animation: introOut .7s cubic-bezier(.7,0,.2,1) 2.35s forwards; cursor: pointer; }
+    animation: introOut .7s cubic-bezier(.7,0,.2,1) 3.35s forwards; cursor: pointer; }
   .locked, .locked body { overflow: hidden; }
   #intro .stage { display: flex; flex-direction: column; align-items: center; gap: 22px; }
   #intro .disc { width: 132px; height: 132px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; position: relative;
@@ -102,11 +104,12 @@
   #intro .word { font: 800 46px var(--display); letter-spacing: -.05em; color: var(--forest); display: flex; overflow: hidden; }
   #intro .word span { display: inline-block; transform: translateY(110%); animation: up .5s cubic-bezier(.2,.9,.3,1) forwards; }
   #intro .tag { color: var(--soft); font-size: 16px; opacity: 0; animation: fade .5s ease 1.75s forwards; }
-  #intro .tag b { background: var(--mint); color: var(--ink); padding: 1px 8px; border-radius: 8px; }
+  #intro .free-app { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; font: 800 20px var(--display); letter-spacing: -.02em; padding: 10px 20px; border-radius: 999px; transform: scale(0) rotate(-4deg); animation: badge .55s cubic-bezier(.2,1.6,.4,1) 2.05s forwards; }
+  @keyframes badge { to { transform: scale(1) rotate(-4deg); } }
   .intro .hero .wrap > :not(.blob) { opacity: 0; transform: translateY(14px); animation: rise .6s cubic-bezier(.2,.9,.3,1) forwards; }
-  .intro .hero .wrap > :nth-child(1) { animation-delay: 2.65s; } .intro .hero .wrap > :nth-child(2) { animation-delay: 2.7s; }
-  .intro .hero .wrap > :nth-child(3) { animation-delay: 2.76s; } .intro .hero .wrap > :nth-child(4) { animation-delay: 2.82s; }
-  .intro .hero .wrap > :nth-child(5) { animation-delay: 2.88s; } .intro .hero .wrap > :nth-child(6) { animation-delay: 2.95s; }
+  .intro .hero .wrap > :nth-child(1) { animation-delay: 3.65s; } .intro .hero .wrap > :nth-child(2) { animation-delay: 3.7s; }
+  .intro .hero .wrap > :nth-child(3) { animation-delay: 3.76s; } .intro .hero .wrap > :nth-child(4) { animation-delay: 3.82s; }
+  .intro .hero .wrap > :nth-child(5) { animation-delay: 3.88s; } .intro .hero .wrap > :nth-child(6) { animation-delay: 3.95s; } .intro .hero .wrap > :nth-child(7) { animation-delay: 4.02s; }
   @keyframes pop { to { transform: scale(1); } }
   @keyframes ring { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(1.9); } }
   @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -141,7 +144,8 @@
       </svg>
     </div>
     <div class="word"><span style="animation-delay:1.20s">t</span><span style="animation-delay:1.26s">e</span><span style="animation-delay:1.32s">n</span><span style="animation-delay:1.38s">n</span><span style="animation-delay:1.44s">e</span><span style="animation-delay:1.50s">r</span></div>
-    <div class="tag">Lekker eten, minder betalen · <b>gratis!</b></div>
+    <div class="tag">Lekker eten, minder betalen</div>
+    <div class="free-app">💚 Gratis app</div>
   </div>
 </div>
 <header class="hero">
@@ -151,6 +155,7 @@
     <span class="hello">Hoi! 👋 Fijn dat je er bent</span>
     <h1>Lekker eten voor 2, onder een <span class="tien">tientje</span></h1>
     <p class="lede">Kies een recept waar je zin in hebt. Tenner zoekt bij de supermarkten bij jou in de buurt uit waar je de boodschappen het voordeligst haalt. Zo wordt koken nóg leuker. 🥕</p>
+    
     <div class="tags"><span>💚 Helemaal gratis</span><span>🙌 Geen account nodig</span><span>📱 Binnenkort voor iPhone en Android</span></div>
 
     <div class="card" id="card"><span class="sticker" aria-hidden="true">Gratis!</span><div id="card-in">
@@ -203,10 +208,10 @@
     var el = document.getElementById('intro'), root = document.documentElement;
     if (!root.classList.contains('intro')) return;
     el.addEventListener('click', function () { root.classList.add('skip'); });
-    // Scrollen weer aan zodra het openingsscherm weg is; als vangnet ook na 3,5 s.
+    // Scrollen weer aan zodra het openingsscherm weg is; als vangnet ook na 4,5 s.
     function done() { root.classList.remove('locked'); if (el.parentNode) el.remove(); }
     el.addEventListener('animationend', function (e) { if (e.target === el && e.animationName === 'introOut') done(); });
-    setTimeout(done, 3500);
+    setTimeout(done, 4500);
   })();
   // Wordt bij het publiceren ingevuld (zie waitlist/build-site.sh). De anon key is openbaar; de tabel laat alleen aanmelden toe.
   const SUPABASE_URL = 'https://dgdfljbipayutjmpanjg.supabase.co';
