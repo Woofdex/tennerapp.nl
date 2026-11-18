@@ -84,11 +84,14 @@ section{padding:clamp(64px,9vw,112px) 0}
 .note{font:400 12.5px var(--mono);color:var(--mute);margin-top:18px;max-width:95ch;line-height:1.7}
 /* recepten */
 .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}@media (max-width:420px){.grid{grid-template-columns:1fr}}
-.rc{border-radius:24px;padding:22px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s}.rc:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--mint)}
-.rc .tp{display:flex;justify-content:space-between;align-items:center}.rc .emo{width:48px;height:48px;border-radius:14px;background:var(--tint);display:grid;place-items:center;font-size:26px}.rc .meal{font:500 12px var(--mono);color:var(--mute)}
-.rc h4{font:700 19px/1.25 var(--display);letter-spacing:-.02em;margin:14px 0 0}.rc .price{display:flex;align-items:baseline;gap:8px;margin-top:12px}
-.rc .price b{font:700 34px var(--display);letter-spacing:-.045em}.rc .price span{font-size:14px;color:var(--soft)}.rc .shops{font-size:14px;color:var(--soft)}
-.rc .save{display:inline-block;margin-top:12px;font:600 13px var(--body);color:var(--green);background:#E3FAEE;padding:5px 10px;border-radius:999px}
+.rc{border-radius:26px;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px var(--line);transition:transform .25s,box-shadow .25s}.rc:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--mint),0 24px 50px -24px rgba(11,42,30,.35)}
+.rc .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--tint)}.rc .ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.rc:hover .ph img{transform:scale(1.05)}
+.rc .ph::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(0,0,0,.35));pointer-events:none}
+.rc .emo{position:absolute;left:14px;top:14px;width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,.92);display:grid;place-items:center;font-size:22px;box-shadow:0 6px 16px -6px rgba(0,0,0,.35)}
+.rc .meal{position:absolute;right:14px;bottom:12px;z-index:1;font:500 12px var(--mono);color:#fff;background:rgba(11,42,30,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:5px 10px;border-radius:999px}
+.rc .bd{padding:18px 20px 20px}.rc h4{font:700 19px/1.25 var(--display);letter-spacing:-.02em;margin:0}
+.rc .price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:10px}.rc .price b{font:700 32px var(--display);letter-spacing:-.045em}.rc .price span{font-size:14px;color:var(--soft)}
+.rc .save{display:inline-block;margin-top:10px;font:600 13px var(--body);color:var(--green);background:#E3FAEE;padding:5px 10px;border-radius:999px}
 /* kop van subpagina's */
 .ptop{padding:30px 0 92px;text-align:center}.ptop h1{margin:18px auto 0;max-width:16ch}.ptop .lead{margin:20px auto 0;color:#CFE9DD}.ptop .lead a{color:var(--mint)}
 .tag{display:inline-block;font:500 12.5px var(--mono);color:var(--ink);background:var(--mint);padding:5px 12px;border-radius:999px}
@@ -158,7 +161,7 @@ footer{padding:20px 0 max(40px,env(safe-area-inset-bottom));color:var(--soft);fo
 <div><a class="brand" href="/home/" style="color:var(--ink)"><img src="/icon.png" alt=""><span>tenner<i style="color:var(--green)">.</i></span></a><p>Gratis app die voor elk recept de voordeligste boodschappen bij jouw supermarkten zoekt. Onafhankelijk en niet verbonden aan de genoemde supermarkten; merknamen zijn van hun eigenaren. Prijzen: landelijke onlineprijzen (open data van Checkjebon.nl), zonder bonusacties.</p></div>
 <div><div class="label">Tenner</div><a href="/home/">Home</a><a href="/hoe-het-werkt/">Hoe het werkt</a><a href="/recepten/">Recepten</a><a href="/veelgestelde-vragen/">Vragen</a><a href="/over/">Over</a></div>
 <div><div class="label">Contact</div><a href="/">Wachtlijst</a><a href="/support/">Hulp en contact</a><a href="/privacy/">Privacy</a><a href="mailto:hallo@tennerapp.nl">hallo@tennerapp.nl</a></div>
-</div><p class="credits">Foto spaghetti carbonara in de appschermen: “Mmm... spaghetti carbonara” door jeffreyw, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via <a href="https://www.flickr.com/photos/7927684@N03/">Flickr</a>. Apple en App Store zijn handelsmerken van Apple Inc. Google Play is een handelsmerk van Google LLC.</p><p class="credits">© 2026 Tenner · gemaakt met 💚 in Nederland</p></div></footer><script>
+</div><p class="credits">Receptfoto’s: TheMealDB.com. Foto spaghetti carbonara in de appschermen: “Mmm... spaghetti carbonara” door jeffreyw, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via <a href="https://www.flickr.com/photos/7927684@N03/">Flickr</a>. Apple en App Store zijn handelsmerken van Apple Inc. Google Play is een handelsmerk van Google LLC.</p><p class="credits">© 2026 Tenner · gemaakt met 💚 in Nederland</p></div></footer><script>
 // Rustig in beeld schuiven bij het scrollen.
 (function () {
   var els = document.querySelectorAll('.reveal');
