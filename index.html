@@ -216,7 +216,7 @@
     </div>
   </div>
 
-  <section aria-labelledby="over">
+  <section aria-labelledby="over" id="over-sectie">
     <h2 id="over" class="sr">Over Tenner</h2>
     <span class="hello">Hoi! 👋 Fijn dat je er bent</span>
     <p class="lead">Lekker eten voor 2, onder een <span class="tien">tientje</span></p>
@@ -249,7 +249,7 @@
     <button class="more-btn" id="more" type="button" aria-controls="desc" aria-expanded="false">meer</button>
   </section>
 
-  <section aria-labelledby="aanmelden-titel">
+  <section aria-labelledby="aanmelden-titel" id="aanmeld-sectie">
     <div class="card" id="aanmelden"><span class="sticker" aria-hidden="true">Gratis!</span><div id="card-in">
       <form id="form" novalidate>
         <h2 class="card-title" id="aanmelden-titel">Doe je mee? 🎉</h2>
@@ -332,6 +332,13 @@
   // Korte links voor social: tennerapp.nl/ig en /tt tellen als Instagram en TikTok.
   const PATHS = { ig: 'instagram', tt: 'tiktok' };
   const source = (new URLSearchParams(location.search).get('utm_source') || PATHS[location.pathname.replace(/\//g, '').toLowerCase()] || document.referrer.replace(/^https?:\/\/(www\.)?/, '').split('/')[0] || 'direct').slice(0, 64);
+  // Bezoekers via de link in bio komen voor de wachtlijst: zet het formulier direct onder de appkop, met een welkom.
+  if (source === 'tiktok' || source === 'instagram') {
+    const form = document.getElementById('aanmeld-sectie'), over = document.getElementById('over-sectie');
+    if (form && over) over.parentNode.insertBefore(form, over);
+    const sub = document.querySelector('.card-sub');
+    if (sub) sub.textContent = (source === 'tiktok' ? 'Hoi TikTokker! 👋 ' : 'Hoi! 👋 ') + 'Zet je in 10 seconden op de wachtlijst. Gratis, en je hoort het als eerste zodra Tenner er is.';
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
