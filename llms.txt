@@ -7,6 +7,7 @@
 - Supermarkten met prijzen: Albert Heijn, Jumbo, Lidl, Plus, Dirk, Hoogvliet, DekaMarkt, Spar, Vomar en Poiesz
 - Recepten: 278, lunch en avondeten
 - Prijsbron: open data van Checkjebon.nl, landelijke onlineprijzen zonder bonus, opgehaald op 17 november 2026
+- Laatste prijswijziging per keten in die data: Albert Heijn 2025-11-13, Jumbo 2026-11-13, Lidl 2026-08-24, Plus 2024-07-17, Dirk 2025-12-08, Hoogvliet 2025-02-12, DekaMarkt 2025-11-24, Spar 2026-11-17, Vomar 2026-05-28, Poiesz 2026-11-17 (niet elke keten is even actueel)
 - Voorbeeld: goulash voor 2 kost €8,62 bij Dirk + Jumbo, tegen €9,95 tot €16,26 als je alles bij één winkel haalt
 - Onafhankelijk: niet verbonden aan supermarkten
 - Contact: hallo@tennerapp.nl
@@ -21,3 +22,6 @@
 - [Over Tenner](https://tennerapp.nl/over/): beloftes en bronnen
 - [Privacybeleid](https://tennerapp.nl/privacy/)
 - [Hulp en contact](https://tennerapp.nl/support/)
+
+## Blog (eigen berekeningen)
+

@@ -161,6 +161,22 @@ footer{padding:20px 0 max(40px,env(safe-area-inset-bottom));color:var(--soft);fo
 .lrf{display:flex;align-items:center;gap:2cqw;margin-top:3cqw;font:600 4cqw Geist,system-ui,sans-serif;color:#0B2A1E}
 .lrf span{display:inline-flex;align-items:center;gap:1.6cqw}.lrf span img{padding:0;width:6.4cqw;height:6.4cqw;border-radius:50%;object-fit:contain;background:#fff;box-shadow:0 0 0 1px #E1EBE6}
 .lrf .plus{color:#8AA096}.lrf b{margin-left:auto;font:800 5cqw Geist,system-ui,sans-serif;letter-spacing:-.02em;color:#0E8F5C}
+
+.article{max-width:760px;margin:0 auto}.article h2{font-size:clamp(26px,3vw,34px);margin:52px 0 14px;letter-spacing:-.035em}.article h3{font-size:21px;margin:30px 0 8px}
+.article p,.article li{font-size:17.5px;line-height:1.7;color:#1F3B30}.article p{margin:0 0 16px}.article ul,.article ol{padding-left:22px;margin:0 0 18px}.article li{margin:6px 0}
+.article a{color:var(--green);font-weight:600}.article strong{color:var(--ink)}
+.byline{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin-top:18px;font:500 13px var(--mono);color:#CFE9DD}
+.tldr{border-radius:22px;background:var(--tint);padding:22px 24px;margin:0 0 30px;box-shadow:inset 0 0 0 1px var(--line)}.tldr b{font:600 13px var(--mono);color:var(--green);display:block;margin-bottom:8px}
+.tldr ul{margin:0;padding-left:20px}.tldr li{margin:6px 0;font-size:16.5px}
+.method{border-left:3px solid var(--mint);padding:4px 0 4px 18px;margin:28px 0;color:var(--soft)}.method p{font-size:15.5px;color:var(--soft)}
+.chart{margin:24px 0 8px}.chart figcaption{font:400 12.5px var(--mono);color:var(--mute);margin-top:8px}.chart svg{display:block;width:100%;height:auto}
+.chart .bar:hover rect{opacity:.85}
+.srcs{font-size:14.5px}.srcs li{font-size:14.5px;color:var(--soft)}
+.posts{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}@media (max-width:420px){.posts{grid-template-columns:1fr}}
+.post{display:flex;flex-direction:column;border-radius:24px;padding:24px;background:#fff;box-shadow:inset 0 0 0 1px var(--line);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.post:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px var(--mint)}.post .k{font:500 12px var(--mono);color:var(--green)}.post h2,.post h3{font:700 21px/1.25 var(--display);letter-spacing:-.025em;margin:10px 0 8px;color:var(--ink)}
+.post p{margin:0;color:var(--soft);font-size:15.5px}.post .d{margin-top:auto;padding-top:14px;font:500 12.5px var(--mono);color:var(--mute)}
+.related{max-width:760px;margin:40px auto 0}
 </style></head><body>
 <div class="top nonotch"><div class="wrap"><nav class="nav" aria-label="Hoofdmenu"><a class="brand" href="/home/"><img src="/icon-64.png" alt="" width="32" height="32"><span>tenner<i>.</i></span></a><div class="links"><a href="/home/">Home</a><a href="/hoe-het-werkt/">Hoe het werkt</a><a href="/recepten/">Recepten</a><a href="/veelgestelde-vragen/">Vragen</a><a href="/over/" aria-current=page>Over</a></div>
 <a class="btn mint" href="/#aanmelden" data-join="Deel Tenner ↗">Doe mee ↗</a></nav><div class="sub"><div class="in"><a href="/home/">Home</a><a href="/hoe-het-werkt/">Hoe het werkt</a><a href="/recepten/">Recepten</a><a href="/veelgestelde-vragen/">Vragen</a><a href="/over/" aria-current=page>Over</a></div></div><header class="ptop"><span class="tag">over tenner</span><h1>Samen slimmer boodschappen doen. <em>Voor iedereen.</em></h1><p class="lead">Boodschappen worden steeds duurder. Daar kun je over balen, maar je kunt er ook iets leuks mee doen: lekker koken en ondertussen slim besparen. Daarvoor maken we Tenner.</p></header></div></div>
@@ -176,7 +192,7 @@ footer{padding:20px 0 max(40px,env(safe-area-inset-bottom));color:var(--soft);fo
 <div><a class="brand" href="/home/" style="color:var(--ink)"><img src="/icon-64.png" alt="" width="32" height="32"><span>tenner<i style="color:var(--green)">.</i></span></a><p>Gratis app die voor elk recept de voordeligste boodschappen bij jouw supermarkten zoekt. Onafhankelijk en niet verbonden aan de genoemde supermarkten; merknamen zijn van hun eigenaren. Prijzen: landelijke onlineprijzen (open data van Checkjebon.nl), zonder bonusacties.</p></div>
 <div><div class="label">Tenner</div><a href="/home/">Home</a><a href="/hoe-het-werkt/">Hoe het werkt</a><a href="/recepten/">Recepten</a><a href="/veelgestelde-vragen/">Vragen</a><a href="/over/">Over</a></div>
 <div><div class="label">Contact</div><a href="/">Wachtlijst</a><a href="/support/">Hulp en contact</a><a href="/privacy/">Privacy</a><a href="mailto:hallo@tennerapp.nl">hallo@tennerapp.nl</a><a href="https://www.tiktok.com/@tenner.app" rel="me noopener">TikTok @tenner.app</a></div>
-</div><p class="credits">Receptfoto’s: TheMealDB.com. Foto spaghetti carbonara in de appschermen: “Mmm... spaghetti carbonara” door jeffreyw, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via <a href="https://www.flickr.com/photos/7927684@N03/">Flickr</a>. Apple en App Store zijn handelsmerken van Apple Inc. Google Play is een handelsmerk van Google LLC.</p><p class="updated">Prijzen bijgewerkt op <time datetime="2026-11-17">17 november 2026</time> · pagina bijgewerkt op <time datetime="2026-11-18">18 november 2026</time></p><p class="credits">© 2026 Tenner · gemaakt met 💚 in Nederland</p></div></footer><script>
+</div><p class="credits">Receptfoto’s: TheMealDB.com. Foto spaghetti carbonara in de appschermen: “Mmm... spaghetti carbonara” door jeffreyw, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, via <a href="https://www.flickr.com/photos/7927684@N03/">Flickr</a>. Apple en App Store zijn handelsmerken van Apple Inc. Google Play is een handelsmerk van Google LLC.</p><p class="updated">Prijsdata opgehaald op <time datetime="2026-11-17">17 november 2026</time>; niet elke supermarkt is even actueel (<a href="/hoe-het-werkt/#actualiteit" style="color:inherit">bekijk per keten</a>) · pagina bijgewerkt op <time datetime="2026-11-18">18 november 2026</time></p><p class="credits">© 2026 Tenner · gemaakt met 💚 in Nederland</p></div></footer><script>
 // Rustig in beeld schuiven bij het scrollen.
 (function () {
   var els = document.querySelectorAll('.reveal');
