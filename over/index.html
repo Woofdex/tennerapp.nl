@@ -1,0 +1,80 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Over Tenner · Tenner</title><meta name="description" content="Tenner is een gratis, onafhankelijke app om samen slimmer boodschappen te doen."><meta property="og:title" content="Over Tenner · Tenner"><meta property="og:description" content="Tenner is een gratis, onafhankelijke app om samen slimmer boodschappen te doen.">
+<meta name="theme-color" content="#FFFFFF"><link rel="icon" href="/icon.png"><link rel="apple-touch-icon" href="/icon.png"><link rel="stylesheet" href="/fonts/fonts.css"><style>
+:root{--ink:#163A2C;--soft:#5D7368;--mute:#8A9A92;--field:#F3F9F6;--forest:#134A37;--green:#1F8A5F;--mint:#6EF2B6;--mint2:#C8F6DE;--tint:#EAFBF2;--line:#E3EEE8;
+--display:Geist,"Inter Tight",system-ui,sans-serif;--body:Geist,Inter,system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:17px/1.6 var(--body);color:var(--ink);background:#fff;overflow-x:hidden}
+a{color:var(--green);font-weight:600}.wrap{max-width:880px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left))}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:56px}
+.brand{display:flex;align-items:center;gap:9px;font:800 20px var(--display);letter-spacing:-.04em;color:var(--forest);text-decoration:none;margin-right:auto}
+.brand img{width:30px;height:30px;border-radius:22.5%}
+.links{display:flex;gap:18px}.links a{color:var(--soft);font-weight:600;font-size:15px;text-decoration:none}.links a[aria-current]{color:var(--forest)}
+.cta{font:700 14px var(--body);color:#fff;background:var(--green);padding:7px 16px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.sub{display:none;border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none}.sub::-webkit-scrollbar{display:none}
+.sub .wrap{display:flex;gap:18px;height:42px;align-items:center}.sub a{color:var(--soft);font-weight:600;font-size:14.5px;text-decoration:none;white-space:nowrap}.sub a[aria-current]{color:var(--forest)}
+@media (max-width:720px){.links{display:none}.sub{display:block}}
+.hero{padding:40px 0 10px}.kicker{display:inline-block;font:800 12.5px var(--body);letter-spacing:.1em;text-transform:uppercase;background:var(--mint);color:#0E3B2A;border-radius:999px;padding:5px 12px}
+h1{font:800 clamp(32px,7vw,48px)/1.07 var(--display);letter-spacing:-.04em;margin:14px 0 12px;text-wrap:balance}
+h1 .hl{background:var(--mint);padding:0 10px 3px;border-radius:12px}
+.lead{font-size:18.5px;color:var(--soft);max-width:60ch;margin:0}
+h2{font:800 25px var(--display);letter-spacing:-.03em;margin:0 0 12px}
+section{padding:32px 0 6px}section+section{border-top:1px solid var(--line);margin-top:22px}
+.steps{display:grid;gap:14px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:var(--field);border-radius:22px;padding:18px}
+.steps .ic{width:52px;height:52px;border-radius:16px;background:#fff;display:grid;place-items:center;font-size:26px}
+.steps strong{display:block;font-size:18px;margin-bottom:2px}.steps p{margin:0;color:var(--soft);font-size:16px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.grid4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.card{background:var(--field);border-radius:22px;padding:20px}
+.card h3{font:800 18px/1.25 var(--display);letter-spacing:-.02em;margin:6px 0 4px}.card p{margin:0;color:var(--soft);font-size:15.5px}
+.emo{font-size:30px}
+.price{display:flex;align-items:baseline;gap:8px;margin-top:10px}.price b{font:800 28px var(--display);letter-spacing:-.03em;color:var(--forest)}.price span{color:var(--soft);font-size:14px}
+.tag{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:700;background:var(--mint2);color:#0E3B2A;border-radius:999px;padding:4px 10px}
+.shops{margin-top:8px;font-size:14px;color:var(--soft)}
+.note{font-size:13.5px;color:var(--mute);margin-top:14px}
+details{border-bottom:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:700;font-size:17.5px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--green);font-weight:800;font-size:22px;line-height:1}details[open] summary::after{content:"–"}
+details p{margin:8px 0 0;color:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.chips span{background:var(--field);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600}
+.join{margin:36px 0 10px;background:linear-gradient(180deg,#E3FAEE 0%,#F6FDF9 60%,#fff 100%);border:2px solid #CFF3E0;border-radius:26px;padding:28px 22px;text-align:center}
+.join h2{margin-bottom:6px}.join p{margin:0 auto 18px;color:var(--soft);max-width:44ch}
+.welcome{display:none;margin:22px 0 0;background:var(--mint2);border-radius:22px;padding:18px 20px}.welcome.on{display:block}.welcome b{font:800 20px var(--display)}.welcome p{margin:4px 0 12px;color:var(--ink)}
+.share{border:0;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;font:700 17px var(--body);padding:15px 26px;border-radius:999px}.btn:hover{background:#197A53}
+footer{margin-top:40px;border-top:1px solid var(--line);padding:22px 0 max(30px,env(safe-area-inset-bottom));font-size:13px;line-height:1.6;color:var(--mute)}
+footer p{margin:0 0 8px}footer a{color:var(--soft)}
+</style></head><body>
+<nav class="nav" aria-label="Hoofdmenu"><div class="wrap"><a class="brand" href="/home/"><img src="/icon.png" alt="">tenner</a><div class="links"><a href="/home/">Home</a><a href="/hoe-het-werkt/">Hoe het werkt</a><a href="/recepten/">Recepten</a><a href="/veelgestelde-vragen/">Vragen</a><a href="/over/" aria-current=page>Over Tenner</a></div><a class="cta" id="navcta" href="/#aanmelden">Doe mee</a></div>
+<div class="sub"><div class="wrap"><a href="/home/">Home</a><a href="/hoe-het-werkt/">Hoe het werkt</a><a href="/recepten/">Recepten</a><a href="/veelgestelde-vragen/">Vragen</a><a href="/over/" aria-current=page>Over Tenner</a></div></div></nav>
+<main class="wrap"><div class="hero"><span class="kicker">Over Tenner</span><h1>Samen slimmer <span class="hl">boodschappen</span> doen</h1>
+<p class="lead">Boodschappen worden steeds duurder. Daar kun je over balen, maar je kunt er ook iets leuks mee doen: lekker koken en ondertussen slim besparen. Daarvoor maken we Tenner.</p></div>
+<section><h2>Waar we voor staan</h2><div class="grid grid4">
+<div class="card"><div class="emo">💚</div><h3>Gratis voor iedereen</h3><p>Geen abonnement, geen advertenties. Tenner moet voor iedereen bereikbaar zijn.</p></div>
+<div class="card"><div class="emo">🤝</div><h3>Onafhankelijk</h3><p>We zijn niet verbonden aan een supermarkt en laten ons niet betalen voor een plek in de app.</p></div>
+<div class="card"><div class="emo">🔍</div><h3>Eerlijk over prijzen</h3><p>We laten zien waar een prijs vandaan komt en wanneer hij is opgehaald. Bonusacties tellen niet mee.</p></div>
+<div class="card"><div class="emo">🔐</div><h3>Privé</h3><p>Je locatie blijft op je telefoon, je account in de EU. Geen tracking.</p></div>
+</div></section>
+<section><h2>Waar de gegevens vandaan komen</h2><p class="lead">Prijzen: open data van Checkjebon.nl (landelijke onlineprijzen van Albert Heijn, Jumbo, Lidl, Plus, Dirk, Hoogvliet, DekaMarkt, Spar, Vomar en Poiesz). Winkellocaties: © OpenStreetMap-bijdragers. Recepten: deels zelf geschreven, deels van TheMealDB.com, vertaald en doorgerekend voor Nederlandse supermarkten.</p></section>
+<section><h2>Contact</h2><p class="lead">Vragen, ideeën of een samenwerking? Mail <a href="mailto:hallo@tennerapp.nl">hallo@tennerapp.nl</a>. We reageren meestal binnen twee werkdagen.</p></section>
+<div class="join" id="join"><h2>Doe je mee? 🎉</h2><p>Tenner is gratis. Zet je op de wachtlijst, dan hoor je het als eerste zodra de app er is.</p><a class="btn" href="/#aanmelden">Zet me op de wachtlijst →</a></div>
+<footer><p>Tenner is onafhankelijk en niet verbonden aan de genoemde supermarkten; merknamen zijn van hun eigenaren. Prijzen zijn landelijke onlineprijzen (open data van Checkjebon.nl), zonder bonusacties.</p>
+<p><a href="/">Wachtlijst</a> · <a href="/home/">Home</a> · <a href="/hoe-het-werkt/">Hoe het werkt</a> · <a href="/recepten/">Recepten</a> · <a href="/veelgestelde-vragen/">Vragen</a> · <a href="/over/">Over Tenner</a> · <a href="/support/">Hulp en contact</a> · <a href="/privacy/">Privacy</a></p><p>Gemaakt met 💚 in Nederland</p></footer>
+</main><script>
+// Al aangemeld (onthouden op dit apparaat): geen formulier meer aanbieden, maar Tenner laten delen met vrienden.
+(function () {
+  var joined = false; try { joined = localStorage.getItem('tenner-joined') === '1'; } catch (e) {}
+  var url = 'https://tennerapp.nl/?utm_source=vriend';
+  var text = 'Ken je Tenner al? Gratis app die voor elk recept de voordeligste boodschappen bij jouw supermarkten zoekt. Zet je op de wachtlijst:';
+  function share() {
+    if (navigator.share) navigator.share({ title: 'Tenner', text: text, url: url }).catch(function () {});
+    else { try { navigator.clipboard.writeText(text + ' ' + url); alert('Link gekopieerd! Plak hem in een berichtje aan je vrienden.'); } catch (e) { location.href = 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url); } }
+  }
+  document.querySelectorAll('[data-share]').forEach(function (b) { b.addEventListener('click', share); });
+  if (!joined) return;
+  var cta = document.getElementById('navcta'); if (cta) { cta.textContent = 'Deel Tenner'; cta.href = '#'; cta.addEventListener('click', function (e) { e.preventDefault(); share(); }); }
+  var j = document.getElementById('join');
+  if (j) j.innerHTML = '<h2>Samen besparen is leuker 💚</h2><p>Je staat op de lijst! Nodig je vrienden, huisgenoten of familie uit. Hoe meer mensen meedoen, hoe beter Tenner wordt.</p><button class="btn share" type="button">Deel Tenner met vrienden</button>';
+  if (j) j.querySelector('button').addEventListener('click', share);
+  if (/[?&]welkom=1/.test(location.search)) { var w = document.getElementById('welcome'); if (w) w.classList.add('on'); }
+})();
+</script></body></html>

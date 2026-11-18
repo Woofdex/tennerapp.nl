@@ -161,6 +161,10 @@
   @media (prefers-reduced-motion: reduce) { .done .yay { animation: none; } html { scroll-behavior: auto; } }
 </style>
 <script>
+  // Al aangemeld op dit apparaat? Dan meteen naar de website (met ?form=1 kun je toch het formulier zien).
+  (function () {
+    try { if (localStorage.getItem('tenner-joined') === '1' && !/[?&]form=1/.test(location.search)) location.replace('/home/'); } catch (e) {}
+  })();
   // Openingsanimatie één keer per sessie; overslaan bij 'minder beweging'. Zonder JS: gewoon de pagina.
   (function () {
     var seen = false; try { seen = sessionStorage.getItem('tenner-intro') === '1'; sessionStorage.setItem('tenner-intro', '1'); } catch (e) {}
@@ -299,7 +303,7 @@
   <footer>
     <p>Tenner is onafhankelijk en niet verbonden aan de genoemde supermarkten; merknamen zijn van hun eigenaren. Prijzen in de app zijn landelijke onlineprijzen (open data van Checkjebon.nl), zonder bonusacties.</p>
     <p>Apple en App Store zijn handelsmerken van Apple Inc. Google Play en het Google Play-logo zijn handelsmerken van Google LLC.</p>
-    <p><a href="/privacy">Privacy</a> · <a href="/support">Hulp en contact</a> · Gemaakt met 💚 in Nederland</p>
+    <p><a href="/home/">Over de app</a> · <a href="/recepten/">Recepten</a> · <a href="/veelgestelde-vragen/">Vragen</a> · <a href="/privacy">Privacy</a> · <a href="/support">Hulp en contact</a> · Gemaakt met 💚 in Nederland</p>
   </footer>
 </main>
 
@@ -356,6 +360,9 @@
       // 409: dit adres staat er al op. Voor de bezoeker is dat ook goed.
       if (!r.ok && r.status !== 409) throw new Error(String(r.status));
       document.getElementById('card-in').innerHTML = '<div class="done"><span class="yay" aria-hidden="true">🎉</span><div class="big">Joepie, je doet mee!</div><p>Je staat op de lijst. Zodra Tenner te downloaden is, hoor je het als eerste van ons. Tot snel!</p></div>';
+      // Daarna door naar de website, en onthouden dat deze bezoeker al op de lijst staat.
+      try { localStorage.setItem('tenner-joined', '1'); } catch (e) {}
+      setTimeout(() => { location.href = '/home/?welkom=1'; }, 1600);
     } catch (err) {
       btn.disabled = false;
       say('Hmm, dat ging niet helemaal goed. Check je internetverbinding en probeer het nog een keer?', true);

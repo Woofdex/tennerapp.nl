@@ -1,0 +1,116 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Recepten met prijzen · Tenner</title><meta name="description" content="Lekker eten voor 2 onder een tientje: recepten met echte prijzen per supermarkt, doorgerekend door Tenner."><meta property="og:title" content="Recepten met prijzen · Tenner"><meta property="og:description" content="Lekker eten voor 2 onder een tientje: recepten met echte prijzen per supermarkt, doorgerekend door Tenner.">
+<meta name="theme-color" content="#FFFFFF"><link rel="icon" href="/icon.png"><link rel="apple-touch-icon" href="/icon.png"><link rel="stylesheet" href="/fonts/fonts.css"><style>
+:root{--ink:#163A2C;--soft:#5D7368;--mute:#8A9A92;--field:#F3F9F6;--forest:#134A37;--green:#1F8A5F;--mint:#6EF2B6;--mint2:#C8F6DE;--tint:#EAFBF2;--line:#E3EEE8;
+--display:Geist,"Inter Tight",system-ui,sans-serif;--body:Geist,Inter,system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:17px/1.6 var(--body);color:var(--ink);background:#fff;overflow-x:hidden}
+a{color:var(--green);font-weight:600}.wrap{max-width:880px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left))}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:56px}
+.brand{display:flex;align-items:center;gap:9px;font:800 20px var(--display);letter-spacing:-.04em;color:var(--forest);text-decoration:none;margin-right:auto}
+.brand img{width:30px;height:30px;border-radius:22.5%}
+.links{display:flex;gap:18px}.links a{color:var(--soft);font-weight:600;font-size:15px;text-decoration:none}.links a[aria-current]{color:var(--forest)}
+.cta{font:700 14px var(--body);color:#fff;background:var(--green);padding:7px 16px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.sub{display:none;border-top:1px solid var(--line);overflow-x:auto;scrollbar-width:none}.sub::-webkit-scrollbar{display:none}
+.sub .wrap{display:flex;gap:18px;height:42px;align-items:center}.sub a{color:var(--soft);font-weight:600;font-size:14.5px;text-decoration:none;white-space:nowrap}.sub a[aria-current]{color:var(--forest)}
+@media (max-width:720px){.links{display:none}.sub{display:block}}
+.hero{padding:40px 0 10px}.kicker{display:inline-block;font:800 12.5px var(--body);letter-spacing:.1em;text-transform:uppercase;background:var(--mint);color:#0E3B2A;border-radius:999px;padding:5px 12px}
+h1{font:800 clamp(32px,7vw,48px)/1.07 var(--display);letter-spacing:-.04em;margin:14px 0 12px;text-wrap:balance}
+h1 .hl{background:var(--mint);padding:0 10px 3px;border-radius:12px}
+.lead{font-size:18.5px;color:var(--soft);max-width:60ch;margin:0}
+h2{font:800 25px var(--display);letter-spacing:-.03em;margin:0 0 12px}
+section{padding:32px 0 6px}section+section{border-top:1px solid var(--line);margin-top:22px}
+.steps{display:grid;gap:14px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:var(--field);border-radius:22px;padding:18px}
+.steps .ic{width:52px;height:52px;border-radius:16px;background:#fff;display:grid;place-items:center;font-size:26px}
+.steps strong{display:block;font-size:18px;margin-bottom:2px}.steps p{margin:0;color:var(--soft);font-size:16px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.grid4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.card{background:var(--field);border-radius:22px;padding:20px}
+.card h3{font:800 18px/1.25 var(--display);letter-spacing:-.02em;margin:6px 0 4px}.card p{margin:0;color:var(--soft);font-size:15.5px}
+.emo{font-size:30px}
+.price{display:flex;align-items:baseline;gap:8px;margin-top:10px}.price b{font:800 28px var(--display);letter-spacing:-.03em;color:var(--forest)}.price span{color:var(--soft);font-size:14px}
+.tag{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:700;background:var(--mint2);color:#0E3B2A;border-radius:999px;padding:4px 10px}
+.shops{margin-top:8px;font-size:14px;color:var(--soft)}
+.note{font-size:13.5px;color:var(--mute);margin-top:14px}
+details{border-bottom:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:700;font-size:17.5px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--green);font-weight:800;font-size:22px;line-height:1}details[open] summary::after{content:"–"}
+details p{margin:8px 0 0;color:var(--soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.chips span{background:var(--field);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600}
+.join{margin:36px 0 10px;background:linear-gradient(180deg,#E3FAEE 0%,#F6FDF9 60%,#fff 100%);border:2px solid #CFF3E0;border-radius:26px;padding:28px 22px;text-align:center}
+.join h2{margin-bottom:6px}.join p{margin:0 auto 18px;color:var(--soft);max-width:44ch}
+.welcome{display:none;margin:22px 0 0;background:var(--mint2);border-radius:22px;padding:18px 20px}.welcome.on{display:block}.welcome b{font:800 20px var(--display)}.welcome p{margin:4px 0 12px;color:var(--ink)}
+.share{border:0;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;font:700 17px var(--body);padding:15px 26px;border-radius:999px}.btn:hover{background:#197A53}
+footer{margin-top:40px;border-top:1px solid var(--line);padding:22px 0 max(30px,env(safe-area-inset-bottom));font-size:13px;line-height:1.6;color:var(--mute)}
+footer p{margin:0 0 8px}footer a{color:var(--soft)}
+</style></head><body>
+<nav class="nav" aria-label="Hoofdmenu"><div class="wrap"><a class="brand" href="/home/"><img src="/icon.png" alt="">tenner</a><div class="links"><a href="/home/">Home</a><a href="/hoe-het-werkt/">Hoe het werkt</a><a href="/recepten/" aria-current=page>Recepten</a><a href="/veelgestelde-vragen/">Vragen</a><a href="/over/">Over Tenner</a></div><a class="cta" id="navcta" href="/#aanmelden">Doe mee</a></div>
+<div class="sub"><div class="wrap"><a href="/home/">Home</a><a href="/hoe-het-werkt/">Hoe het werkt</a><a href="/recepten/" aria-current=page>Recepten</a><a href="/veelgestelde-vragen/">Vragen</a><a href="/over/">Over Tenner</a></div></div></nav>
+<main class="wrap"><div class="hero"><span class="kicker">Recepten</span><h1>Lekker eten voor 2, <span class="hl">onder een tientje</span></h1>
+<p class="lead">Een greep uit de 278 recepten in Tenner, met wat ze kosten. Dit zijn echte berekeningen uit de app.</p></div>
+<section><div class="grid"><div class="card"><div class="emo">🧅</div><h3>Franse uiensoep met kaascroutons</h3><p>Lunch voor 2 · 60 min</p>
+<div class="price"><b>€3,30</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Dirk</div><span class="tag">Tot €1,43 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥧</div><h3>Pastei met kip, ham en prei</h3><p>Avondeten voor 2 · 90 min</p>
+<div class="price"><b>€7,92</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Dirk</div><span class="tag">Tot €3,53 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥘</div><h3>Goulash met mosterd en aardappels</h3><p>Avondeten voor 2 · 120 min</p>
+<div class="price"><b>€8,62</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Dirk en Jumbo</div><span class="tag">Tot €7,64 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🍳</div><h3>Omelet met chorizo, aardappel en kaas</h3><p>Lunch voor 2 · 20 min</p>
+<div class="price"><b>€5,58</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Albert Heijn en Dirk</div><span class="tag">Tot €3,88 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥬</div><h3>Rode kool met appel en rookworst</h3><p>Avondeten voor 2 · 130 min</p>
+<div class="price"><b>€5,45</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Jumbo en Dirk</div><span class="tag">Tot €4,80 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🫒</div><h3>Spaanse kipschotel met olijven</h3><p>Avondeten voor 2 · 50 min</p>
+<div class="price"><b>€8,30</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Jumbo en Dirk</div><span class="tag">Tot €5,44 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥔</div><h3>Spaanse tortilla met tomatenbrood</h3><p>Lunch voor 2 · 55 min</p>
+<div class="price"><b>€5,79</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Dirk en Jumbo</div><span class="tag">Tot €3,45 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🍗</div><h3>Ovenkip met walnotensaus en pita</h3><p>Avondeten voor 2 · 50 min</p>
+<div class="price"><b>€9,25</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Dirk en Lidl</div><span class="tag">Tot €5,06 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥩</div><h3>Gehaktschnitzels met puree</h3><p>Avondeten voor 2 · 50 min</p>
+<div class="price"><b>€6,97</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Dirk en Jumbo</div><span class="tag">Tot €5,42 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥔</div><h3>Turkse gevulde aardappel (kumpir)</h3><p>Lunch voor 2 · 75 min</p>
+<div class="price"><b>€4,96</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Jumbo en Dirk</div><span class="tag">Tot €3,20 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥬</div><h3>Spitskool met gehakt en paprika</h3><p>Avondeten voor 2 · 50 min</p>
+<div class="price"><b>€8,35</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Lidl en Jumbo</div><span class="tag">Tot €3,74 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🦐</div><h3>Thaise garnalencurry met tomaat</h3><p>Avondeten voor 2 · 25 min</p>
+<div class="price"><b>€6,96</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Jumbo en Lidl</div><span class="tag">Tot €4,27 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥧</div><h3>Hartige roomkaastaart met tomaatjes</h3><p>Lunch voor 2 · 60 min</p>
+<div class="price"><b>€7,25</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Lidl</div><span class="tag">Tot €3,46 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥩</div><h3>Biefstukreepjes met sperziebonen</h3><p>Avondeten voor 2 · 35 min</p>
+<div class="price"><b>€9,86</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Jumbo en Dirk</div><span class="tag">Tot €8,82 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🍗</div><h3>Ovenkip met mosterd en balsamico</h3><p>Avondeten voor 2 · 100 min</p>
+<div class="price"><b>€7,37</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Dirk en Jumbo</div><span class="tag">Tot €4,28 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥣</div><h3>Turkse rode-linzensoep</h3><p>Lunch voor 2 · 35 min</p>
+<div class="price"><b>€3,50</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Jumbo</div><span class="tag">Tot €1,22 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥘</div><h3>Poolse goulash met zuurkool</h3><p>Avondeten voor 2 · 85 min</p>
+<div class="price"><b>€6,60</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Dirk en Jumbo</div><span class="tag">Tot €4,86 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥬</div><h3>Ovengroente met boerenkool en worst</h3><p>Avondeten voor 2 · 55 min</p>
+<div class="price"><b>€7,73</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Jumbo en Lidl</div><span class="tag">Tot €4,36 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥑</div><h3>Broodje kip-avocado</h3><p>Lunch voor 2 · 10 min</p>
+<div class="price"><b>€6,74</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Lidl</div><span class="tag">Tot €1,70 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🥩</div><h3>Biefstuk met gebakken uien en rijst</h3><p>Avondeten voor 2 · 40 min</p>
+<div class="price"><b>€9,45</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Lidl en Dirk</div><span class="tag">Tot €8,34 voordeliger dan alles bij één winkel</span></div><div class="card"><div class="emo">🍛</div><h3>Kipcurry met aardappel</h3><p>Avondeten voor 2 · 45 min</p>
+<div class="price"><b>€8,87</b><span>voor 2 personen</span></div>
+<div class="shops">Bij Jumbo en Albert Heijn</div><span class="tag">Tot €3,72 voordeliger dan alles bij één winkel</span></div></div>
+<p class="note">Voorbeeld voor Utrecht, met Albert Heijn, Jumbo, Lidl en Dirk in de buurt en maximaal 2 winkels. Landelijke onlineprijzen van 17 november 2026, zonder bonusacties, voor hele verpakkingen; zout, peper, olie en andere kastproducten heb je al in huis. Bij jouw winkels en op een andere dag kan het anders uitvallen.</p></section>
+<div class="join" id="join"><h2>Doe je mee? 🎉</h2><p>Tenner is gratis. Zet je op de wachtlijst, dan hoor je het als eerste zodra de app er is.</p><a class="btn" href="/#aanmelden">Zet me op de wachtlijst →</a></div>
+<footer><p>Tenner is onafhankelijk en niet verbonden aan de genoemde supermarkten; merknamen zijn van hun eigenaren. Prijzen zijn landelijke onlineprijzen (open data van Checkjebon.nl), zonder bonusacties.</p>
+<p><a href="/">Wachtlijst</a> · <a href="/home/">Home</a> · <a href="/hoe-het-werkt/">Hoe het werkt</a> · <a href="/recepten/">Recepten</a> · <a href="/veelgestelde-vragen/">Vragen</a> · <a href="/over/">Over Tenner</a> · <a href="/support/">Hulp en contact</a> · <a href="/privacy/">Privacy</a></p><p>Gemaakt met 💚 in Nederland</p></footer>
+</main><script>
+// Al aangemeld (onthouden op dit apparaat): geen formulier meer aanbieden, maar Tenner laten delen met vrienden.
+(function () {
+  var joined = false; try { joined = localStorage.getItem('tenner-joined') === '1'; } catch (e) {}
+  var url = 'https://tennerapp.nl/?utm_source=vriend';
+  var text = 'Ken je Tenner al? Gratis app die voor elk recept de voordeligste boodschappen bij jouw supermarkten zoekt. Zet je op de wachtlijst:';
+  function share() {
+    if (navigator.share) navigator.share({ title: 'Tenner', text: text, url: url }).catch(function () {});
+    else { try { navigator.clipboard.writeText(text + ' ' + url); alert('Link gekopieerd! Plak hem in een berichtje aan je vrienden.'); } catch (e) { location.href = 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url); } }
+  }
+  document.querySelectorAll('[data-share]').forEach(function (b) { b.addEventListener('click', share); });
+  if (!joined) return;
+  var cta = document.getElementById('navcta'); if (cta) { cta.textContent = 'Deel Tenner'; cta.href = '#'; cta.addEventListener('click', function (e) { e.preventDefault(); share(); }); }
+  var j = document.getElementById('join');
+  if (j) j.innerHTML = '<h2>Samen besparen is leuker 💚</h2><p>Je staat op de lijst! Nodig je vrienden, huisgenoten of familie uit. Hoe meer mensen meedoen, hoe beter Tenner wordt.</p><button class="btn share" type="button">Deel Tenner met vrienden</button>';
+  if (j) j.querySelector('button').addEventListener('click', share);
+  if (/[?&]welkom=1/.test(location.search)) { var w = document.getElementById('welcome'); if (w) w.classList.add('on'); }
+})();
+</script></body></html>
